@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Inter is loaded via <link> in BaseLayout.astro */
+/* Poppins is loaded via <link> in BaseLayout.astro */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -124,7 +124,7 @@
   }
   body {
     @apply bg-background text-foreground text-xl;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     font-display: swap;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -139,22 +139,22 @@
     word-break: break-word;
   }
   h1 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
     @apply text-5xl md:text-6xl;
   }
   h2 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
     @apply text-3xl md:text-4xl;
   }
   h3 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
     @apply text-2xl md:text-3xl;
   }
   h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
     @apply text-xl md:text-2xl;
   }
@@ -164,7 +164,7 @@
   
   /* Bold Extended font utility */
   .font-bold-extended {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
   }
   

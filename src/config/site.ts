@@ -30,12 +30,12 @@ export const siteConfig = {
 
   // Brand Colors (used in CSS variables)
   colors: {
-    primary: "#050315",      // Most dominant - text, headers
+    primary: "#041b34",      // Most dominant - text, headers
     secondary: "#545454",    // Semi dominant - buttons, highlights, accent
     tertiary: "#fffbdc",     // Subtle accent - muted backgrounds
     quaternary: "#fbfbfe",   // Subtle accent - page background
     accent: "#545454",       // Secondary accent
-    highlight: "#fce300",    // Warm yellow accent - small elements, pops of color
+    highlight: "#f4911d",    // Orange accent - buttons, small elements, pops of color
   },
 
   // Logo
