@@ -224,9 +224,9 @@ const isRight = imagePosition === "right";
     background: var(--brand-primary);
   }
 
-  /* Header group - centered */
+  /* Header group - left aligned */
   .cs-header-group {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
   }
 
@@ -240,16 +240,19 @@ const isRight = imagePosition === "right";
     margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
   }
 
-  .cs-pretitle::before,
-  .cs-pretitle::after {
+  .cs-pretitle::before {
     content: '';
     flex: 0 0 60px;
     height: 3px;
     background: var(--brand-highlight);
+  }
+
+  .cs-pretitle::after {
+    content: none;
   }
 
   /* Title */
@@ -358,8 +361,7 @@ const isRight = imagePosition === "right";
     .cs-text-side {
       padding: 3rem 1.5rem;
     }
-    .cs-pretitle::before,
-    .cs-pretitle::after {
+    .cs-pretitle::before {
       flex: 0 0 40px;
     }
     .cs-features {

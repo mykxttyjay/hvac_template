@@ -35,15 +35,27 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
       </div>
     </div>
 
-    <!-- Categories -->
-    <div class="ss-categories" data-animate-stagger>
-      {categories.map((category) => (
-        <div class="ss-category">
-          <div class="ss-cat-header">
-            <div class="ss-cat-line"></div>
-            <h3 class="ss-cat-title">{category.title}</h3>
-          </div>
+    <!-- Tabs Navigation -->
+    <div class="ss-tabs-nav">
+      {categories.map((category, index) => (
+        <button
+          class="ss-tab-btn"
+          data-tab={index}
+          data-active={index === 0 ? "true" : "false"}
+        >
+          {category.title}
+        </button>
+      ))}
+    </div>
 
+    <!-- Tab Content -->
+    <div class="ss-tabs-content">
+      {categories.map((category, index) => (
+        <div
+          class="ss-tab-panel"
+          data-panel={index}
+          data-active={index === 0 ? "true" : "false"}
+        >
           <div class="ss-grid">
             {category.services.map((service) => {
               const isLink = !!service.href;
@@ -77,6 +89,40 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
   </div>
 </section>
 
+<script>
+  function initTabs() {
+    const tabButtons = document.querySelectorAll('.ss-tab-btn');
+    const tabPanels = document.querySelectorAll('.ss-tab-panel');
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const tabIndex = button.getAttribute('data-tab');
+
+        // Update buttons
+        tabButtons.forEach((btn) => {
+          btn.setAttribute('data-active', 'false');
+        });
+        button.setAttribute('data-active', 'true');
+
+        // Update panels
+        tabPanels.forEach((panel) => {
+          panel.setAttribute('data-active', 'false');
+        });
+        const activePanel = document.querySelector(`[data-panel="${tabIndex}"]`);
+        if (activePanel) {
+          activePanel.setAttribute('data-active', 'true');
+        }
+      });
+    });
+  }
+
+  // Initialize on page load
+  initTabs();
+
+  // Re-initialize on Astro page transitions
+  document.addEventListener('astro:page-load', initTabs);
+</script>
+
 <style>
   .ss-section {
     background: var(--background);
@@ -103,13 +149,14 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
   .ss-header-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
+    align-items: start;
   }
+
   @media (min-width: 1024px) {
     .ss-header-grid {
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      gap: 3rem;
     }
   }
 
@@ -120,6 +167,7 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     letter-spacing: -0.01em;
     line-height: 1.1;
     color: var(--brand-primary);
+    text-align: left;
   }
   @media (min-width: 768px) {
     .ss-title { font-size: 2.5rem; }
@@ -129,35 +177,71 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     font-size: 0.95rem;
     line-height: 1.75;
     color: var(--brand-secondary);
+    text-align: left;
   }
 
-  /* ─── Categories ─── */
-  .ss-categories {
+  /* ─── Tabs Navigation ─── */
+  .ss-tabs-nav {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    justify-content: flex-start;
+    gap: 0;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e5e7eb;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .ss-cat-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-  .ss-cat-line {
-    width: 3px;
-    height: 24px;
-    background: var(--brand-highlight);
-    flex-shrink: 0;
-  }
-  .ss-cat-title {
-    font-size: 0.85rem;
+  .ss-tab-btn {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: var(--brand-secondary);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-bottom: -2px;
+  }
+
+  .ss-tab-btn:hover {
     color: var(--brand-primary);
+    background: rgba(244, 145, 29, 0.05);
+  }
+
+  .ss-tab-btn[data-active="true"] {
+    color: var(--brand-primary);
+    background: transparent;
+    border-bottom-color: var(--brand-highlight);
+  }
+
+  /* ─── Tab Panels ─── */
+  .ss-tabs-content {
+    position: relative;
+  }
+
+  .ss-tab-panel {
+    display: none;
+  }
+
+  .ss-tab-panel[data-active="true"] {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* ─── Cards Grid ─── */
@@ -248,6 +332,16 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
   @media (max-width: 640px) {
     .ss-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .ss-tabs-nav {
+      justify-content: flex-start;
+      gap: 0;
+    }
+    
+    .ss-tab-btn {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.7rem;
     }
   }
 </style>
