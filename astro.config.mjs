@@ -72,7 +72,6 @@ export default defineConfig({
       'f.hubspotusercontent40.net',
       'images.unsplash.com',
       'images.pexels.com',
-      'johnh967.sg-host.com',
       'www.superiorcomforthvac.com',
       'ultimateheatingandair.com',
       'healthinnovation-kss.com',

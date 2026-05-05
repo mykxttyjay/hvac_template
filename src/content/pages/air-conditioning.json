@@ -62,10 +62,10 @@
         "title": "Our Air Conditioning Services",
         "variant": "services",
         "items": [
-          { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg" },
+          { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://images.unsplash.com/photo-1650551182956-47efa0f90b64?w=800&q=80" },
-          { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://www.askmoss.com/wp-content/uploads/2025/06/thermostat-repair-moss.jpg" }
+          { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
     },

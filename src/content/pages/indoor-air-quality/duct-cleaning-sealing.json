@@ -9,7 +9,7 @@
         "subtitle": "Cleaner ducts, better airflow, and healthier indoor air for your home.",
         "buttonText": "SCHEDULE SERVICE",
         "buttonHref": "/contact",
-        "backgroundImage": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg",
+        "backgroundImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
         "image": "/images/bg2.jpg",
         "imageAlt": "Duct cleaning and sealing service"
       }
@@ -44,7 +44,7 @@
         "items": [
           { "title": "Air Filtration Systems", "href": "/indoor-air-quality/air-filtration-systems", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "Duct Repair and Replacement", "href": "/indoor-air-quality/duct-repair-replacement", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop" },
-          { "title": "Attic Insulation and Ventilation", "href": "/indoor-air-quality/attic-insulation-ventilation", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg" },
+          { "title": "Attic Insulation and Ventilation", "href": "/indoor-air-quality/attic-insulation-ventilation", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }

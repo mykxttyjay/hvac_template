@@ -48,7 +48,7 @@
         "items": [
           { "title": "Air Conditioning Services", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "href": "/air-conditioning" },
           { "title": "Heating Services", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop", "href": "/heating" },
-          { "title": "Indoor Air Quality Services", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg", "href": "/indoor-air-quality" },
+          { "title": "Indoor Air Quality Services", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "href": "/indoor-air-quality" },
           { "title": "Emergency HVAC Services", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "href": "/emergency" }
         ]
       }

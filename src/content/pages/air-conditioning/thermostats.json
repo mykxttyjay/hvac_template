@@ -9,7 +9,7 @@
         "subtitle": "Smart thermostat installation and upgrades.",
         "buttonText": "SCHEDULE SERVICE",
         "buttonHref": "/contact",
-        "backgroundImage": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg",
+        "backgroundImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
         "image": "/images/bg2.jpg",
         "imageAlt": "Smart thermostat installation"
       }
@@ -50,7 +50,7 @@
         "items": [
           { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "Mini-Split Systems", "href": "/air-conditioning/mini-split-systems", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop" },
-          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg" },
+          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
