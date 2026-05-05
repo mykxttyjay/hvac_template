@@ -55,7 +55,7 @@
       "component": "ContentSection",
       "props": {
         "title": "Dedicated to Your Comfort and Quality HVAC Service",
-        "description": "We are committed to delivering reliable, energy-efficient, and high-quality heating and cooling solutions for your home or business. Our certified technicians are equipped with modern tools and years of experience to ensure your HVAC system performs at its best. From <a href='/air-conditioning/ac-repair'><strong>AC repair</strong></a> and <a href='/heating/furnace-repair'><strong>furnace repair</strong></a> to <a href='/indoor-air-quality'><strong>indoor air quality</strong></a> solutions, we handle it all.",
+        "description": "We are committed to delivering reliable, energy-efficient, and high-quality heating and cooling solutions for your home or business. Our certified technicians are equipped with modern tools and years of experience to ensure your HVAC system performs at its best. From <strong>AC repair</strong> and <strong>furnace repair</strong> to <strong>indoor air quality solutions</strong>, we handle it all.",
         "features": [
           "Fast and Reliable Service",
           "Certified Technicians",
