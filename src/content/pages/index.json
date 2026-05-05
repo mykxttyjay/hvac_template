@@ -27,9 +27,27 @@
         "title": "Specials and Offers",
         "backgroundImage": "/images/bg2.jpg",
         "coupons": [
-          { "label": "First-Time Customers", "discount": "$100 OFF", "description": "Air Duct Cleaning for first-time customers only", "buttonText": "GET OFFER" },
-          { "label": "Repair Special", "discount": "$150 OFF", "description": "Save $150 on Any Repair. Valid for repairs over $500", "buttonText": "BOOK NOW" },
-          { "label": "Maintenance", "discount": "$25 OFF", "description": "Your Furnace Tune-Up. Limited time offer", "buttonText": "BOOK NOW" }
+          { 
+            "label": "First-Time Customers", 
+            "discount": "$100 OFF", 
+            "description": "Air Duct Cleaning for first-time customers only", 
+            "buttonText": "GET OFFER",
+            "backgroundImage": "/images/coupon1.webp"
+          },
+          { 
+            "label": "Repair Special", 
+            "discount": "$150 OFF", 
+            "description": "Save $150 on Any Repair. Valid for repairs over $500", 
+            "buttonText": "BOOK NOW",
+            "backgroundImage": "/images/coupon2.webp"
+          },
+          { 
+            "label": "Maintenance", 
+            "discount": "$25 OFF", 
+            "description": "Your Furnace Tune-Up. Limited time offer", 
+            "buttonText": "BOOK NOW",
+            "backgroundImage": "/images/coupon3.webp"
+          }
         ]
       }
     },
