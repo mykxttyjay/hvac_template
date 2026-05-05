@@ -21,259 +21,94 @@ interface Props {
 const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
 ---
 
-<section class="svc-section">
-  <div class="svc-body">
-    <div class="container mx-auto px-6 md:px-12 lg:px-16">
+<section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden py-24 md:py-32">
+  {/* Background decorative elements */}
+  <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[600px] h-[600px] bg-brand-highlight/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <!-- Header -->
-      <div class="svc-header" data-animate="fade-up">
-        <div class="svc-eyebrow">
-          <span class="svc-eyebrow-text">{badge}</span>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          <h2 class="svc-title">{title}</h2>
-          <p class="svc-desc" set:html={description} />
-        </div>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+    <!-- Header -->
+    <div class="mb-16 max-w-4xl" data-animate="fade-up">
+      <div class="mb-6">
+        <span class="inline-block px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-highlight bg-brand-primary rounded-full shadow-sm">
+          {badge}
+        </span>
       </div>
 
-      <!-- Category Tabs -->
-      <div class="svc-tabs" data-animate="fade-up" data-animate-delay="100">
-        {categories.map((category, index) => (
-          <button
-            class="svc-tab"
-            data-tab={index}
-            data-active={index === 0 ? "true" : "false"}
-          >
-            <span class="svc-tab-text">{category.title}</span>
-            <span class="svc-tab-bar"></span>
-          </button>
-        ))}
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <h2 class="text-4xl md:text-5xl lg:text-[45px] font-extrabold uppercase tracking-tight leading-[1.1] text-brand-primary">
+          {title}
+        </h2>
+        <p class="text-base md:text-lg leading-relaxed text-gray-600" set:html={description} />
       </div>
+    </div>
 
-      <!-- Service Cards Grid -->
-      <div class="relative min-h-[800px] sm:min-h-[600px] lg:min-h-[400px]">
-        {categories.map((category, catIndex) => (
-          <div
-            class="service-content absolute inset-0 transition-opacity duration-500"
-            data-content={catIndex}
-            style={catIndex === 0 ? "opacity: 1; pointer-events: auto;" : "opacity: 0; pointer-events: none;"}
-          >
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-animate-stagger>
-              {category.services.map((service, serviceIndex) => {
-                const Tag = service.href ? 'a' : 'div';
-                return (
-                  <Tag
-                    {...(service.href ? { href: service.href } : {})}
-                    class="svc-card group"
-                    style={`transition-delay: ${serviceIndex * 70}ms`}
-                  >
-                    {/* Highlight strip on left */}
-                    <span class="svc-card-strip"></span>
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap gap-2 sm:gap-4 mb-12 border-b border-gray-200 pb-2 svc-tabs" data-animate="fade-up" data-animate-delay="100">
+      {categories.map((category, index) => (
+        <button
+          class="svc-tab group relative px-6 py-3 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 overflow-hidden"
+          data-tab={index}
+          data-active={index === 0 ? "true" : "false"}
+        >
+          <span class="absolute inset-0 w-full h-full bg-brand-primary scale-0 opacity-0 transition-all duration-300 group-data-[active=true]:scale-100 group-data-[active=true]:opacity-100 rounded-full"></span>
+          <span class="relative z-10 text-gray-500 group-hover:text-brand-primary group-data-[active=true]:text-white transition-colors duration-300">
+            {category.title}
+          </span>
+        </button>
+      ))}
+    </div>
 
-                    <div class="svc-card-inner">
-                      <div class="svc-icon">
-                        <span set:html={service.icon} />
-                      </div>
+    <!-- Service Cards Grid -->
+    <div class="relative min-h-[800px] sm:min-h-[600px] lg:min-h-[400px]">
+      {categories.map((category, catIndex) => (
+        <div
+          class="service-content absolute inset-0 transition-all duration-500 transform"
+          data-content={catIndex}
+          style={catIndex === 0 ? "opacity: 1; pointer-events: auto; transform: translateY(0);" : "opacity: 0; pointer-events: none; transform: translateY(20px);"}
+        >
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-animate-stagger>
+            {category.services.map((service, serviceIndex) => {
+              const Tag = service.href ? 'a' : 'div';
+              return (
+                <Tag
+                  {...(service.href ? { href: service.href } : {})}
+                  class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-full"
+                  style={`transition-delay: ${serviceIndex * 70}ms`}
+                >
+                  {/* Highlight strip top */}
+                  <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary to-brand-highlight transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
 
-                      <h3 class="svc-card-title">{service.title}</h3>
-                      <p class="svc-card-desc" set:html={service.description} />
+                  <div class="p-8 flex-1 flex flex-col">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-gray-50 border border-gray-100 text-brand-primary mb-6 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-brand-highlight group-hover:-translate-y-1 group-hover:shadow-lg">
+                      <span class="[&>svg]:w-7 [&>svg]:h-7" set:html={service.icon} />
+                    </div>
 
-                      {service.href && (
-                        <div class="svc-arrow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-brand-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-6 flex-1" set:html={service.description} />
+
+                    {service.href && (
+                      <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-brand-primary transition-colors">Learn More</span>
+                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 transition-all duration-300 group-hover:bg-brand-highlight group-hover:text-brand-primary group-hover:scale-110">
                           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                           </svg>
                         </div>
-                      )}
-                    </div>
-                  </Tag>
-                );
-              })}
-            </div>
+                      </div>
+                    )}
+                  </div>
+                </Tag>
+              );
+            })}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
-
-<style>
-  .svc-section {
-    position: relative;
-    background: var(--background);
-  }
-
-  .svc-body {
-    background: #fff;
-    padding: 4rem 0 5rem;
-  }
-
-  /* ─── Header ─── */
-  .svc-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .svc-eyebrow {
-    margin-bottom: 1.5rem;
-  }
-  .svc-eyebrow-text {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--brand-highlight);
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
-  }
-
-  .svc-title {
-    font-size: 2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
-    color: var(--brand-primary);
-  }
-  @media (min-width: 768px) {
-    .svc-title { font-size: 45px; }
-  }
-
-  .svc-desc {
-    font-size: 0.95rem;
-    line-height: 1.75;
-    color: var(--brand-secondary);
-  }
-
-  /* ─── Tabs ─── */
-  .svc-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    margin-bottom: 2.5rem;
-    border-bottom: 2px solid rgba(0,0,0,0.18);
-  }
-
-  .svc-tab {
-    position: relative;
-    padding: 0.85rem 1.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--brand-secondary);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  .svc-tab:hover {
-    color: var(--brand-primary);
-  }
-
-  .svc-tab[data-active="true"] {
-    color: var(--brand-primary);
-  }
-
-  .svc-tab-bar {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: transparent;
-    transition: background 0.3s ease;
-  }
-  .svc-tab[data-active="true"] .svc-tab-bar {
-    background: var(--brand-highlight);
-  }
-
-  /* ─── Cards ─── */
-  .svc-card {
-    position: relative;
-    display: block;
-    background: white;
-    border: 1px solid rgba(0,0,0,0.18);
-    overflow: hidden;
-    transition: all 0.35s ease;
-    text-decoration: none;
-  }
-  .svc-card:hover {
-    border-color: var(--brand-highlight);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-  }
-
-  .svc-card-strip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--brand-highlight);
-    transition: height 0.35s ease;
-  }
-  .svc-card:hover .svc-card-strip {
-    height: 100%;
-  }
-
-  .svc-card-inner {
-    padding: 1.75rem 1.5rem;
-  }
-
-  .svc-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--brand-tertiary);
-    border: 1px solid rgba(0,0,0,0.06);
-    color: var(--brand-primary);
-    margin-bottom: 1.25rem;
-    transition: all 0.3s ease;
-  }
-  .svc-card:hover .svc-icon {
-    background: var(--brand-highlight);
-    border-color: var(--brand-highlight);
-    color: var(--brand-primary);
-  }
-
-  .svc-card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--brand-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-    transition: color 0.3s ease;
-  }
-
-  .svc-card-desc {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: var(--brand-secondary);
-    margin-bottom: 1.25rem;
-  }
-
-  .svc-arrow {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--brand-tertiary);
-    color: var(--brand-secondary);
-    transition: all 0.3s ease;
-  }
-  .svc-card:hover .svc-arrow {
-    background: var(--brand-highlight);
-    color: var(--brand-primary);
-    transform: translateX(4px);
-  }
-</style>
 
 <script>
   const tabs = document.querySelectorAll<HTMLElement>('.svc-tab');
@@ -291,10 +126,16 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
         if (contentIndex === tabIndex) {
           content.style.opacity = '1';
           content.style.pointerEvents = 'auto';
+          content.style.transform = 'translateY(0)';
         } else {
           content.style.opacity = '0';
           content.style.pointerEvents = 'none';
+          content.style.transform = 'translateY(20px)';
         }
+      });
+    });
+  });
+</script>
       });
     });
   });
