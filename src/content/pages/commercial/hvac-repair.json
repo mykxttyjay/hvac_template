@@ -42,10 +42,10 @@
         "title": "Related Services",
         "variant": "services",
         "items": [
-          { "title": "Commercial HVAC Maintenance", "href": "/commercial/hvac-maintenance", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Quality-HVAC-Service.webp" },
+          { "title": "Commercial HVAC Maintenance", "href": "/commercial/hvac-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "Commercial HVAC Installation", "href": "/commercial/hvac-installation", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop" },
           { "title": "Commercial HVAC Warranty", "href": "/commercial/hvac-warranty", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg" },
-          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp" }
+          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
     },

@@ -9,7 +9,7 @@
         "subtitle": "Fast, reliable emergency HVAC repairs and services available 24/7.",
         "buttonText": "CALL NOW",
         "buttonHref": "/contact",
-        "backgroundImage": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Emergency-HVAC-Service-Banner.webp",
+        "backgroundImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
         "image": "/images/bg2.jpg",
         "imageAlt": "Emergency HVAC service",
         "trustIndicators": [
@@ -34,7 +34,7 @@
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
         "images": [
-          "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp"
+          "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
         ],
         "imagePosition": "left"
       }
@@ -46,7 +46,7 @@
         "title": "Why Choose Our Emergency HVAC",
         "titleHighlight": "Services?",
         "description": "When facing an HVAC emergency, you need a team you can trust 24/7. Our certified technicians are dispatched quickly to diagnose and resolve your heating or cooling emergency, so you can get back to comfort fast.",
-        "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/24_7-Emergency-Repair-Services.webp",
+        "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
         "imageAlt": "Emergency HVAC technician",
         "imagePosition": "left",
         "features": [
@@ -63,9 +63,9 @@
         "title": "Comprehensive Emergency HVAC Services",
         "variant": "services",
         "items": [
-          { "title": "24/7 AC Repairs", "href": "/emergency/24-7-ac-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Heating-and-Cooling-Emergency-Repair-Services.webp" },
-          { "title": "24/7 Heating and Cooling Repairs", "href": "/emergency/24-7-heating-cooling-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp" },
-          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/24_7-Emergency-Repair-Services.webp" }
+          { "title": "24/7 AC Repairs", "href": "/emergency/24-7-ac-repairs", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
+          { "title": "24/7 Heating and Cooling Repairs", "href": "/emergency/24-7-heating-cooling-repairs", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
+          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
     },

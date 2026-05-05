@@ -57,10 +57,10 @@
         "title": "Our Comprehensive Indoor Air Quality Services",
         "variant": "services",
         "items": [
-          { "title": "Air Filtration Systems", "href": "/indoor-air-quality/air-filtration-systems", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Air-Filtration-Systems.webp" },
-          { "title": "Duct Cleaning and Sealing", "href": "/indoor-air-quality/duct-cleaning-sealing", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Duct-Repair-and-Replacement.webp" },
-          { "title": "Duct Repair and Replacement", "href": "/indoor-air-quality/duct-repair-replacement", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Duct-Cleaning-and-Sealing-Services.webp" },
-          { "title": "Attic Insulation and Ventilation", "href": "/indoor-air-quality/attic-insulation-ventilation", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Indoor-Air-Quality-Services.webp" }
+          { "title": "Air Filtration Systems", "href": "/indoor-air-quality/air-filtration-systems", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
+          { "title": "Duct Cleaning and Sealing", "href": "/indoor-air-quality/duct-cleaning-sealing", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
+          { "title": "Duct Repair and Replacement", "href": "/indoor-air-quality/duct-repair-replacement", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
+          { "title": "Attic Insulation and Ventilation", "href": "/indoor-air-quality/attic-insulation-ventilation", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
     },

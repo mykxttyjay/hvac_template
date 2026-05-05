@@ -48,10 +48,10 @@
         "title": "Related Services",
         "variant": "services",
         "items": [
-          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Quality-HVAC-Service.webp" },
+          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
           { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop" },
           { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg" },
-          { "title": "HVAC Brands", "href": "/air-conditioning/hvac-brands", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp" }
+          { "title": "HVAC Brands", "href": "/air-conditioning/hvac-brands", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
         ]
       }
     },
