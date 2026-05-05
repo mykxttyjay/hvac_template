@@ -26,16 +26,17 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
     </svg>
   </div>
 
-  <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 py-20 md:py-28">
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 pt-12 md:pt-16 pb-12 md:pb-16">
     <!-- Header -->
     <div class="mp-header" data-animate="fade-scale">
       {eyebrow && (
         <div class="mp-eyebrow">
+          <div class="mp-line"></div>
           <span class="mp-eyebrow-text">{eyebrow}</span>
+          <div class="mp-line"></div>
         </div>
       )}
       <h2 class="mp-title">{title}</h2>
-      <div class="mp-divider"></div>
       <p class="mp-desc" set:html={description} />
     </div>
 
@@ -100,13 +101,23 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
   .mp-header {
     text-align: center;
     margin-bottom: 3rem;
-    max-width: 48rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
 
   .mp-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .mp-line {
+    width: 60px;
+    height: 3px;
+    background: var(--brand-highlight);
+    flex-shrink: 0;
   }
   .mp-eyebrow-text {
     font-size: 0.7rem;
@@ -115,8 +126,9 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--brand-highlight);
+    padding: 0;
+    border: none;
+    margin: 0;
   }
 
   .mp-title {
@@ -140,7 +152,7 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
   }
 
   .mp-desc {
-    font-size: 0.95rem;
+    font-size: 18px;
     line-height: 1.75;
     color: rgba(255,255,255,0.55);
   }
@@ -148,16 +160,17 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
   /* ─── Cards ─── */
   .mp-card {
     position: relative;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(244, 145, 29, 0.3);
     overflow: hidden;
     transition: all 0.35s ease;
+    border-radius: 12px;
   }
   .mp-card:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.18);
     border-color: var(--brand-highlight);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(244, 145, 29, 0.2);
   }
 
   .mp-card-accent {
@@ -189,16 +202,18 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(244, 145, 29, 0.15);
+    border: 2px solid rgba(244, 145, 29, 0.4);
     color: var(--brand-highlight);
     margin-bottom: 1.25rem;
     transition: all 0.3s ease;
+    border-radius: 8px;
   }
   .mp-card:hover .mp-icon {
     background: var(--brand-highlight);
     border-color: var(--brand-highlight);
     color: var(--brand-primary);
+    transform: scale(1.1);
   }
 
   .mp-card-title {
