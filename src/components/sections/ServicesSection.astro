@@ -26,11 +26,14 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     <!-- Header -->
     <div class="ss-header" data-animate="fade-up">
       <div class="ss-eyebrow">
+        <div class="ss-line"></div>
         <span class="ss-eyebrow-text">{badge}</span>
+        <div class="ss-line"></div>
       </div>
 
       <div class="ss-header-grid">
         <h2 class="ss-title">{title}</h2>
+        <div class="ss-divider"></div>
         <p class="ss-desc" set:html={description} />
       </div>
     </div>
@@ -125,7 +128,7 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
 
 <style>
   .ss-section {
-    background: var(--background);
+    background: #ffffff;
   }
 
   /* ─── Header ─── */
@@ -137,6 +140,14 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .ss-line {
+    width: 60px;
+    height: 3px;
+    background: var(--brand-highlight);
+    flex-shrink: 0;
   }
   .ss-eyebrow-text {
     font-size: 0.7rem;
@@ -145,9 +156,9 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
-    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    margin: 0;
   }
 
   .ss-header-grid {
@@ -180,8 +191,15 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     .ss-title { font-size: 45px; }
   }
 
+  .ss-divider {
+    width: 3rem;
+    height: 3px;
+    background: var(--brand-highlight);
+    margin: 1rem auto;
+  }
+
   .ss-desc {
-    font-size: 0.95rem;
+    font-size: 18px;
     line-height: 1.75;
     color: var(--brand-secondary);
     text-align: center;
