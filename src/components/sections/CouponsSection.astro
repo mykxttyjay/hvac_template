@@ -34,15 +34,16 @@ const defaultBackgrounds = [
 ];
 ---
 
-<section class="cpn-section relative overflow-hidden py-20 md:py-28">
+<section class="cpn-section relative overflow-hidden py-12 md:py-16">
   <div class="cpn-bg-base"></div>
 
   <div class="relative z-[1] container mx-auto px-6 md:px-12 lg:px-16">
     <!-- Section header -->
-    <div class="mb-14" data-animate="fade-scale">
-      <div class="flex items-center gap-3 mb-4">
+    <div class="mb-12 text-center" data-animate="fade-scale">
+      <div class="flex items-center justify-center gap-3 mb-4">
         <div class="h-[3px] w-10 bg-brand-highlight"></div>
         <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">Limited Time</span>
+        <div class="h-[3px] w-10 bg-brand-highlight"></div>
       </div>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-brand-primary">{title}</h2>
     </div>
@@ -136,12 +137,42 @@ const defaultBackgrounds = [
     align-items: end;
   }
 
-  /* Lift the middle card */
+  /* Make the middle card much bigger and push it down */
   .cpn-grid > :nth-child(2) {
-    transform: translateY(-1.5rem);
+    transform: translateY(2rem) scale(1.08);
   }
   .cpn-grid > :nth-child(2):hover {
-    transform: translateY(calc(-1.5rem - 6px));
+    transform: translateY(calc(2rem - 6px)) scale(1.08);
+  }
+  
+  /* Make left and right cards bigger too */
+  .cpn-grid > :nth-child(1),
+  .cpn-grid > :nth-child(3) {
+    transform: scale(1.0);
+  }
+  .cpn-grid > :nth-child(1):hover,
+  .cpn-grid > :nth-child(3):hover {
+    transform: translateY(-6px) scale(1.0);
+  }
+  
+  /* Increase image height for all cards */
+  .cpn-img-strip {
+    height: 200px;
+  }
+  
+  /* Increase image height for center card */
+  .cpn-grid > :nth-child(2) .cpn-img-strip {
+    height: 220px;
+  }
+  
+  /* Larger discount text for center card */
+  .cpn-grid > :nth-child(2) .cpn-discount {
+    font-size: 3.25rem;
+  }
+  
+  /* Larger description for center card */
+  .cpn-grid > :nth-child(2) .cpn-desc {
+    font-size: 0.9rem;
   }
 
   /* ─── Coupon Card ─── */
@@ -185,6 +216,7 @@ const defaultBackgrounds = [
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: brightness(1.1) contrast(1.05);
   }
   .cpn-coupon:hover .cpn-img-bg {
     transform: scale(1.08);
@@ -195,8 +227,8 @@ const defaultBackgrounds = [
     inset: 0;
     background: linear-gradient(
       160deg,
-      color-mix(in srgb, var(--brand-primary) 70%, transparent) 0%,
-      color-mix(in srgb, var(--brand-primary) 90%, transparent) 100%
+      color-mix(in srgb, var(--brand-primary) 50%, transparent) 0%,
+      color-mix(in srgb, var(--brand-primary) 70%, transparent) 100%
     );
     z-index: 1;
   }
