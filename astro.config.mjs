@@ -43,7 +43,8 @@ export default defineConfig({
     },
     ssr: {
       noExternal: ['lucide-react']
-    }
+    },
+    logLevel: 'error'
   },
 
   integrations: [
