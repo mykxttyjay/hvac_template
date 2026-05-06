@@ -130,10 +130,10 @@
         "title": "Affordable HVAC Maintenance Plans to Keep Your System Running Efficiently Year-Round",
         "description": "Regular <a href='/maintenance-plan'><strong>maintenance</strong></a> helps prevent costly breakdowns and extends the life of your HVAC system.",
         "includedItems": [
-          { "title": "Extend system lifespan", "description": "Regular maintenance keeps your system running longer" },
-          { "title": "Reduce energy bills", "description": "Efficient systems use less energy and save you money" },
-          { "title": "Improve air quality", "description": "Clean filters and components mean cleaner air" },
-          { "title": "Priority service scheduling", "description": "Get fast-track service when you need it most" }
+          { "title": "Extend system lifespan", "description": "Regular maintenance keeps your system running longer", "image": "https://images.unsplash.com/photo-1665826254141-bfa10685e002?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+          { "title": "Reduce energy bills", "description": "Efficient systems use less energy and save you money", "image": "https://images.unsplash.com/photo-1663602692362-80e4564384c0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+          { "title": "Improve air quality", "description": "Clean filters and components mean cleaner air", "image": "https://images.unsplash.com/photo-1564414549740-e6dab6bc6f20?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+          { "title": "Priority service scheduling", "description": "Get fast-track service when you need it most", "image": "https://images.unsplash.com/photo-1544819667-9bfc1de23d4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
         ],
         "benefits": [
           "Prevent unexpected breakdowns",

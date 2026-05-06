@@ -76,7 +76,6 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
             </div>
 
             <h2 class="sa-title text-2xl md:text-3xl">{title}</h2>
-            <div class="sa-divider"></div>
             <p class="sa-desc" set:html={description} />
 
             <a href={buttonHref} class="sa-btn">
@@ -103,7 +102,6 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
           </div>
 
           <h2 class="sa-title">{title}</h2>
-          <div class="sa-divider"></div>
           <p class="sa-desc mb-8" set:html={description} />
 
           {areas && areas.length > 0 && (

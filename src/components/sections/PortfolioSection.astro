@@ -19,10 +19,10 @@ const bottomRow = images.slice(4);
     <!-- Header -->
     <div class="pf-header" data-animate="fade-scale">
       <div class="pf-eyebrow">
+        <svg class="pf-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         <span class="pf-eyebrow-text">{badge}</span>
       </div>
       <h2 class="pf-title">{title}</h2>
-      <div class="pf-divider"></div>
     </div>
 
     {images.length > 0 ? (
@@ -100,6 +100,21 @@ const bottomRow = images.slice(4);
 
   .pf-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .pf-fan-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   .pf-eyebrow-text {
     font-size: 0.7rem;
@@ -108,8 +123,10 @@ const bottomRow = images.slice(4);
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
+    padding: 0;
+    background: none;
+    border: none;
+    margin: 0;
   }
 
   .pf-title {

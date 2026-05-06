@@ -27,9 +27,8 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     <!-- Header -->
     <div class="mb-8 max-w-6xl mx-auto text-center" data-animate="fade-up">
       <div class="mb-6 flex items-center justify-center gap-3">
-        <div class="h-[3px] w-10 bg-brand-highlight"></div>
+        <svg class="svc-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">{badge}</span>
-        <div class="h-[3px] w-10 bg-brand-highlight"></div>
       </div>
 
       <div class="grid grid-cols-1 gap-4 items-center text-center">
@@ -106,6 +105,20 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     </div>
   </div>
 </section>
+
+<style>
+  .svc-fan-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
 
 <script>
   const tabs = document.querySelectorAll<HTMLElement>('.svc-tab');

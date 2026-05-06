@@ -41,9 +41,8 @@ const defaultBackgrounds = [
     <!-- Section header -->
     <div class="mb-12 text-center" data-animate="fade-scale">
       <div class="flex items-center justify-center gap-3 mb-4">
-        <div class="h-[3px] w-10 bg-brand-highlight"></div>
+        <svg class="cpn-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">Limited Time</span>
-        <div class="h-[3px] w-10 bg-brand-highlight"></div>
       </div>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-brand-primary">{title}</h2>
     </div>
@@ -117,6 +116,19 @@ const defaultBackgrounds = [
     position: absolute;
     inset: 0;
     background: var(--brand-primary);
+  }
+
+  /* Rotating fan icon */
+  .cpn-fan-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   /* Section header override for dark bg */
