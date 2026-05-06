@@ -30,7 +30,7 @@ const bottomRow = images.slice(4);
         <!-- Top row -->
         <div class="pf-row pf-row--top" data-animate-stagger>
           {topRow.map((img, i) => (
-            <div class="pf-item group">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="pf-item group">
               <Image src={img} alt={`${title} - project ${i + 1}`} class="pf-img" width={400} height={300} format="webp" quality={65} loading="lazy" decoding="async" />
               {/* Geometric hover overlay */}
               <div class="pf-hover">
@@ -47,7 +47,7 @@ const bottomRow = images.slice(4);
               </div>
               {/* Top highlight strip */}
               <span class="pf-item-strip"></span>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -55,7 +55,7 @@ const bottomRow = images.slice(4);
         {bottomRow.length > 0 && (
           <div class="pf-row pf-row--bottom" style={`--pf-bottom-count: ${bottomRow.length}`} data-animate-stagger>
             {bottomRow.map((img, i) => (
-              <div class="pf-item group">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="pf-item group">
                 <Image src={img} alt={`${title} - project ${topRow.length + i + 1}`} class="pf-img" width={400} height={300} format="webp" quality={65} loading="lazy" decoding="async" />
                 <div class="pf-hover">
                   <div class="pf-hover-slope">
@@ -70,7 +70,7 @@ const bottomRow = images.slice(4);
                   </div>
                 </div>
                 <span class="pf-item-strip"></span>
-              </div>
+              </a>
             ))}
           </div>
         )}
@@ -175,6 +175,8 @@ const bottomRow = images.slice(4);
     overflow: hidden;
     aspect-ratio: 4 / 3;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
   }
 
   .pf-img {
@@ -182,78 +184,40 @@ const bottomRow = images.slice(4);
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
   }
   .pf-item:hover .pf-img {
-    transform: scale(1.06);
+    transform: scale(1.05);
+    filter: brightness(0.9);
   }
 
   /* Top highlight strip */
   .pf-item-strip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--brand-highlight);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-    z-index: 3;
-  }
-  .pf-item:hover .pf-item-strip {
-    transform: scaleX(1);
+    display: none;
   }
 
   /* Geometric hover overlay */
   .pf-hover {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    z-index: 2;
-  }
-  .pf-item:hover .pf-hover {
-    opacity: 1;
+    display: none;
   }
 
   .pf-hover-slope {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
+    display: none;
   }
   .pf-hover-slope svg {
-    width: 100%;
-    height: 100%;
+    display: none;
   }
 
   .pf-hover-content {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    transform: translateY(8px);
-    transition: transform 0.35s ease;
-  }
-  .pf-item:hover .pf-hover-content {
-    transform: translateY(0);
+    display: none;
   }
 
   .pf-hover-accent {
-    width: 3px;
-    height: 18px;
-    background: var(--brand-highlight);
+    display: none;
   }
 
   .pf-hover-label {
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    display: none;
   }
 
   /* Placeholder */
