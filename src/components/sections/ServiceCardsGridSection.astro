@@ -21,12 +21,11 @@ interface Props {
 const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6">
-  {/* Background image on right side - behind text */}
-  <div class="absolute top-0 right-0 w-1/4 h-full opacity-5 pointer-events-none -z-10" style="background-image: url('https://images.unsplash.com/photo-1691351582808-329cde17ffa2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;"></div>
+<section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <div class="absolute inset-0 bg-white/50"></div>
   <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
     <!-- Header -->
-    <div class="mb-8 max-w-4xl mx-auto text-center" data-animate="fade-up">
+    <div class="mb-8 max-w-6xl mx-auto text-center" data-animate="fade-up">
       <div class="mb-6 flex items-center justify-center gap-3">
         <div class="h-[3px] w-10 bg-brand-highlight"></div>
         <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">{badge}</span>
@@ -34,7 +33,7 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
       </div>
 
       <div class="grid grid-cols-1 gap-4 items-center text-center">
-        <h2 class="text-4xl md:text-5xl lg:text-[45px] font-extrabold uppercase tracking-tight leading-[1.1] text-brand-primary max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl lg:text-[45px] font-extrabold uppercase tracking-tight leading-[1.1] text-brand-primary max-w-4xl mx-auto">
           {title}
         </h2>
         <p class="text-base md:text-lg leading-relaxed text-gray-600 max-w-6xl mx-auto" set:html={description} />
@@ -45,12 +44,12 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     <div class="flex flex-wrap gap-2 sm:gap-4 mb-12 justify-center svc-tabs" data-animate="fade-up" data-animate-delay="100">
       {categories.map((category, index) => (
         <button
-          class="svc-tab group relative px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 overflow-hidden bg-transparent border-2 border-gray-300 rounded-lg"
+          class="svc-tab group relative px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 overflow-hidden bg-white border-2 border-gray-300 rounded-lg hover:shadow-md hover:border-brand-primary"
           data-tab={index}
           data-active={index === 0 ? "true" : "false"}
         >
           <span class="absolute inset-0 w-full h-full bg-brand-primary scale-0 opacity-0 transition-all duration-300 group-data-[active=true]:scale-100 group-data-[active=true]:opacity-100"></span>
-          <span class="relative z-10 text-gray-500 group-hover:text-brand-primary group-data-[active=true]:text-white transition-colors duration-300">
+          <span class="relative z-10 text-gray-600 group-hover:text-brand-primary group-data-[active=true]:text-white transition-colors duration-300">
             {category.title}
           </span>
         </button>
@@ -71,27 +70,27 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
               return (
                 <Tag
                   {...(service.href ? { href: service.href } : {})}
-                  class="group relative bg-transparent border-2 border-gray-300 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] hover:border-brand-highlight flex flex-col h-full"
+                  class="group relative bg-white border-2 border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-xl hover:border-brand-primary flex flex-col h-full"
                   style={`transition-delay: ${serviceIndex * 70}ms`}
                 >
                   {/* Highlight strip top */}
                   <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary to-brand-highlight transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
 
                   <div class="p-8 flex-1 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-gray-50 border border-gray-100 text-brand-primary mb-6 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-brand-highlight group-hover:-translate-y-1 group-hover:shadow-lg">
-                      <span class="[&>svg]:w-7 [&>svg]:h-7" set:html={service.icon} />
+                    <div class="flex items-start justify-start text-brand-primary mb-6">
+                      <span class="[&>svg]:w-10 [&>svg]:h-10" set:html={service.icon} />
                     </div>
 
                     <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-brand-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p class="text-sm text-gray-500 leading-relaxed mb-6 flex-1" set:html={service.description} />
+                    <p class="text-base leading-relaxed text-gray-500 mb-6 flex-1" set:html={service.description} />
 
                     {service.href && (
-                      <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-5">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-brand-primary transition-colors">Learn More</span>
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 transition-all duration-300 group-hover:bg-brand-highlight group-hover:text-brand-primary group-hover:scale-110">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <div class="mt-auto flex items-center justify-between gap-3 pt-5">
+                        <span class="text-sm font-bold uppercase tracking-widest text-brand-highlight transition-colors group-hover:text-brand-primary">Learn More</span>
+                        <div class="w-10 h-10 rounded-full bg-brand-highlight flex items-center justify-center text-white transition-all duration-300 group-hover:bg-brand-primary group-hover:scale-110 group-hover:shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                           </svg>
                         </div>
