@@ -225,6 +225,7 @@
     {
       "component": "ServiceAreaSection",
       "props": {
+        "badge": "SERVICE AREA",
         "title": "Heating & Cooling Solutions in Your Area",
         "description": "Looking for reliable HVAC services in your area? We provide expert residential and <a href='/commercial'><strong>commercial</strong></a> heating and cooling solutions across multiple cities. Whether you need <a href='/air-conditioning/ac-repair'><strong>AC repair</strong></a>, <a href='/heating/furnace-installation-replacement'><strong>furnace installation</strong></a>, <a href='/maintenance-plan'><strong>maintenance</strong></a>, or <a href='/emergency'><strong>emergency services</strong></a>, our certified technicians are here to help. We're committed to quality, efficiency, and customer satisfaction. <a href='/contact'><strong>Call us today</strong></a> to schedule your service!",
         "areas": [
