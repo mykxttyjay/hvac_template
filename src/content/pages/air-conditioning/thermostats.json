@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Thermostats in {city}",
+        "title": "Frequently Asked Questions about <br>Thermostats in {city}",
         "faqs": [
           { "question": "What are the benefits of upgrading to a smart thermostat?", "answer": "Smart thermostats learn your schedule, allow remote control via your phone, provide energy usage reports, and can save you up to 10-15% on <a href='/heating'><strong>heating</strong></a> and <a href='/air-conditioning'><strong>cooling</strong></a> costs annually." },
           { "question": "Is a smart thermostat compatible with my HVAC system?", "answer": "Most smart thermostats are compatible with standard HVAC systems. Our technicians will verify compatibility during a consultation and recommend the best thermostat option for your specific setup." },

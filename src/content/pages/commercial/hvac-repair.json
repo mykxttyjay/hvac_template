@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Commercial HVAC Repair in {city}",
+        "title": "Frequently Asked Questions about <br>Commercial HVAC Repair in {city}",
         "faqs": [
           { "question": "How quickly can you respond to a commercial HVAC emergency?", "answer": "We understand that HVAC downtime costs your business money. Our commercial team offers priority response times, typically arriving within 1-2 hours for emergency calls across the {city} area." },
           { "question": "What types of commercial HVAC systems do you repair?", "answer": "We service all commercial HVAC systems including rooftop units (RTUs), split systems, VRF/VRV systems, chillers, boilers, and packaged units from all major manufacturers. Our technicians are trained on both traditional and modern commercial systems." },

@@ -115,16 +115,10 @@ function getIcon(key?: string): string {
               class="fps-svc-card group"
             >
               {/* Image strip */}
-              {item.image ? (
+              {item.image && (
                 <div class="fps-svc-img">
                   <img src={item.image} alt={item.title} class="fps-svc-img-el" width="740" height="494" loading="lazy" decoding="async" />
                   <div class="fps-svc-img-overlay"></div>
-                </div>
-              ) : (
-                <div class="fps-svc-img fps-svc-img--placeholder">
-                  <div class="fps-svc-img-icon">
-                    <Fragment set:html={getIcon(item.icon)} />
-                  </div>
                 </div>
               )}
 
@@ -133,8 +127,14 @@ function getIcon(key?: string): string {
 
               {/* Body */}
               <div class="fps-svc-body">
+                {/* Icon in beige box */}
+                <div class="fps-svc-icon-box">
+                  <Fragment set:html={getIcon(item.icon)} />
+                </div>
+
                 <h3 class="fps-svc-card-title">{item.title}</h3>
                 {item.text && <p class="fps-svc-card-text">{item.text}</p>}
+                
                 {isLink && (
                   <div class="fps-svc-arrow">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -450,18 +450,19 @@ function getIcon(key?: string): string {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid rgba(244, 145, 29, 0.1);
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.35s ease;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
     color: inherit;
-    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   .fps-svc-card:hover {
-    border-color: var(--brand-highlight);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border-color: rgba(244, 145, 29, 0.1);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   /* Image strip */
@@ -469,13 +470,6 @@ function getIcon(key?: string): string {
     position: relative;
     height: 180px;
     overflow: hidden;
-  }
-  .fps-svc-img--placeholder {
-    background: var(--brand-tertiary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 140px;
   }
   .fps-svc-img-el {
     width: 100%;
@@ -491,79 +485,85 @@ function getIcon(key?: string): string {
     inset: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, transparent 50%);
   }
-  .fps-svc-img-icon {
+
+  /* Accent strip on top */
+  .fps-svc-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-highlight), transparent);
+    transition: all 0.35s ease;
+  }
+  .fps-svc-card:hover .fps-svc-strip {
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-highlight), transparent);
+    opacity: 1;
+  }
+
+  /* Body */
+  .fps-svc-body {
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 160px;
+  }
+
+  /* Icon box - beige background like ServicesSection */
+  .fps-svc-icon-box {
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #f5f1e8;
     color: var(--brand-primary);
+    margin-bottom: 1.25rem;
     transition: all 0.3s ease;
   }
-  .fps-svc-card:hover .fps-svc-img-icon {
-    background: var(--brand-highlight);
-    border-color: var(--brand-highlight);
+  .fps-svc-icon-box :global(svg) {
+    width: 24px;
+    height: 24px;
   }
 
-  /* Accent strip on left */
-  .fps-svc-strip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--brand-highlight);
-    transition: height 0.35s ease;
-    z-index: 2;
-  }
-  .fps-svc-card:hover .fps-svc-strip {
-    height: 100%;
-  }
-
-  /* Body */
-  .fps-svc-body {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   .fps-svc-card-title {
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     color: var(--brand-primary);
-    margin-bottom: 0;
-    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
     transition: color 0.3s ease;
   }
   .fps-svc-card-text {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.7;
     color: var(--brand-secondary);
-    flex: 1;
+    margin-bottom: auto;
+    padding-bottom: 1.25rem;
+    font-weight: 500;
   }
 
-  /* Arrow */
+  /* Arrow - small square box at bottom */
   .fps-svc-arrow {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--brand-tertiary);
-    color: var(--brand-secondary);
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    align-self: flex-start;
+    background: linear-gradient(135deg, var(--brand-tertiary), rgba(244, 145, 29, 0.05));
+    color: var(--brand-highlight);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-weight: 600;
   }
   .fps-svc-card:hover .fps-svc-arrow {
-    background: var(--brand-highlight);
-    color: var(--brand-primary);
-    transform: translateX(4px);
+    background: linear-gradient(135deg, var(--brand-tertiary), rgba(244, 145, 29, 0.05));
+    color: var(--brand-highlight);
+    transform: none;
+    box-shadow: none;
   }
 
   @media (max-width: 640px) {

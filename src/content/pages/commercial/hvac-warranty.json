@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Commercial HVAC Warranties in {city}",
+        "title": "Frequently Asked Questions about <br>Commercial HVAC Warranties in {city}",
         "faqs": [
           { "question": "What does a commercial HVAC warranty cover?", "answer": "Commercial warranties typically cover major components like compressors, heat exchangers, and control boards. Extended warranties can include labor, refrigerant, and additional parts coverage. We'll help you understand exactly what's covered under your plan." },
           { "question": "How do I keep my commercial HVAC warranty valid?", "answer": "Most manufacturers require documented professional <a href='/commercial/hvac-maintenance'><strong>maintenance</strong></a> at regular intervals to keep warranties valid. Our maintenance contracts include all required service records and documentation to ensure your warranty stays in good standing." },

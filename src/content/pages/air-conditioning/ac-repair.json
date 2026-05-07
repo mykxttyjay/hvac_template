@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about AC Repair in {city}",
+        "title": "Frequently Asked Questions about <br>AC Repair in {city}",
         "faqs": [
           { "question": "How much does AC repair typically cost?", "answer": "AC repair costs vary depending on the issue, but most repairs range from $150 to $600. We provide upfront pricing before any work begins." },
           { "question": "How do I know if my AC can be repaired or needs replacement?", "answer": "If your system is over 10-15 years old, requires frequent repairs, or uses R-22 refrigerant, <a href='/air-conditioning/ac-installation-replacement'><strong>replacement</strong></a> may be more cost-effective. Our technicians will assess your unit and provide honest recommendations." },

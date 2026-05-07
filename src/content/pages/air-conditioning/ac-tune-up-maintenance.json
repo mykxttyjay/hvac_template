@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about AC Tune-Up & Maintenance in {city}",
+        "title": "Frequently Asked Questions about <br>AC Tune-Up & Maintenance in {city}",
         "faqs": [
           { "question": "How often should I schedule an AC tune-up?", "answer": "We recommend scheduling an AC tune-up at least once a year, ideally in the spring before the cooling season begins. Regular maintenance helps prevent breakdowns and keeps your system running efficiently." },
           { "question": "What does an AC tune-up include?", "answer": "Our comprehensive tune-up includes inspecting and cleaning coils, checking refrigerant levels, testing electrical connections, lubricating moving parts, and ensuring your <a href='/air-conditioning/thermostats'><strong>thermostat</strong></a> is calibrated correctly." },

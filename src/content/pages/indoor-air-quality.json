@@ -17,8 +17,8 @@
     {
       "component": "ContentSection",
       "props": {
-        "badge": "Indoor Air Quality",
-        "title": "Enhance Your Home with Indoor Air Quality Services in {city}",
+        "badge": "Expert HVAC Services",
+        "title": "Professional Indoor Air Quality Services in {city} and Surrounding Areas",
         "description": "Your indoor air can be up to five times more polluted than outdoor air. {fullName} offers professional indoor air quality solutions designed to remove allergens, pollutants, and contaminants from your home. From advanced <a href='/indoor-air-quality/air-filtration-systems'><strong>air filtration systems</strong></a> to complete <a href='/indoor-air-quality/duct-cleaning-sealing'><strong>duct cleaning and sealing</strong></a>, our certified technicians help you breathe easier and live healthier.",
         "features": [
           "Advanced Air Filtration",
@@ -31,7 +31,8 @@
         "images": [
           "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
         ],
-        "imagePosition": "right"
+        "imagePosition": "left",
+        "imageHeight": "880px"
       }
     },
     {
@@ -77,7 +78,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Indoor Air Quality Services in {city}",
+        "title": "Frequently Asked Questions about Indoor <br>Air Quality Services in {city}",
         "faqs": [
           { "question": "How often should I clean my air ducts?", "answer": "We recommend professional <a href='/indoor-air-quality/duct-cleaning-sealing'><strong>duct cleaning</strong></a> every 3 to 5 years, or more frequently if you have pets, allergies, or have recently completed home renovations. Regular cleaning helps maintain good air quality and HVAC efficiency." },
           { "question": "What types of indoor air quality issues can you help with?", "answer": "We address a wide range of issues including dust and allergen buildup, mold and mildew, poor ventilation, humidity imbalances, and contaminated ductwork. Our technicians will assess your home and recommend the right solutions." },

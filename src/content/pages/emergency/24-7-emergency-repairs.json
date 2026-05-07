@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about 24/7 Emergency Repairs in {city}",
+        "title": "Frequently Asked Questions about <br>24/7 Emergency Repairs in {city}",
         "faqs": [
           { "question": "What should I do while waiting for an emergency repair?", "answer": "If you smell gas, leave the home immediately and call 911. For other emergencies, turn off your HVAC system at the thermostat, check your circuit breaker, and if safe, open windows for ventilation. Our dispatch team can walk you through safety steps over the phone." },
           { "question": "Do you repair all HVAC brands?", "answer": "Yes. Our emergency technicians are trained and equipped to repair all major <a href='/air-conditioning/hvac-brands'><strong>HVAC brands</strong></a> including Carrier, Trane, Lennox, Rheem, Goodman, York, and more. We carry common parts on our trucks for faster repairs." },

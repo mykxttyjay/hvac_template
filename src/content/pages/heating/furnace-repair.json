@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Furnace Repair in {city}",
+        "title": "Frequently Asked Questions about <br>Furnace Repair in {city}",
         "faqs": [
           { "question": "How much does furnace repair typically cost?", "answer": "Furnace repair costs vary depending on the issue, but most repairs range from $150 to $500. We provide upfront pricing before any work begins." },
           { "question": "How do I know if my furnace needs repair or replacement?", "answer": "If your furnace is over 15-20 years old, requires frequent repairs, makes unusual noises, or struggles to heat your home evenly, <a href='/heating/furnace-installation-replacement'><strong>replacement</strong></a> may be more cost-effective. Our technicians will assess your unit and provide honest recommendations." },

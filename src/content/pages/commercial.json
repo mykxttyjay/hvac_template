@@ -31,6 +31,7 @@
         "images": [
           "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
         ],
+        "imageHeight": "820px",
         "imagePosition": "left"
       }
     },
@@ -68,7 +69,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Commercial HVAC Services in {city}",
+        "title": "Frequently Asked Questions about <br>Commercial HVAC Services in {city}",
         "faqs": [
           { "question": "How often should my commercial HVAC system be serviced?", "answer": "We recommend scheduling professional <a href='/commercial/hvac-maintenance'><strong>maintenance</strong></a> at least twice a year — once before the cooling season and once before the heating season. Regular maintenance helps prevent costly breakdowns and keeps your system running efficiently." },
           { "question": "What are the benefits of upgrading to an energy-efficient commercial HVAC system?", "answer": "Energy-efficient systems can significantly reduce your utility bills, improve indoor comfort, qualify for tax incentives, and reduce your business's carbon footprint. Our team can help you evaluate the best options for your building." },

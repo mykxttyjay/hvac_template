@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about 24/7 Heating and Cooling Repairs in {city}",
+        "title": "Frequently Asked Questions about <br>24/7 Heating and Cooling Repairs in {city}",
         "faqs": [
           { "question": "What heating and cooling emergencies do you handle?", "answer": "We handle all HVAC emergencies including complete system failures, gas leaks or carbon monoxide concerns, frozen pipes from heating failure, no heat during extreme cold, no cooling during heat waves, and any situation that threatens your family's safety or comfort." },
           { "question": "Are your emergency technicians fully licensed?", "answer": "Yes. All our emergency technicians are fully licensed, insured, and experienced in diagnosing and repairing all major heating and cooling brands. They arrive with fully stocked trucks to resolve most issues on the first visit." },

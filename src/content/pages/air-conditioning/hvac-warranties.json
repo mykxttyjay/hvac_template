@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about HVAC Warranties in {city}",
+        "title": "Frequently Asked Questions about <br>HVAC Warranties in {city}",
         "faqs": [
           { "question": "What does an HVAC warranty typically cover?", "answer": "Most manufacturer warranties cover defective parts and components for 5-10 years. Extended warranties can cover labor costs and additional parts. We'll help you understand exactly what's covered under your specific warranty." },
           { "question": "How do I keep my HVAC warranty valid?", "answer": "Most warranties require annual professional <a href='/air-conditioning/ac-tune-up-maintenance'><strong>maintenance</strong></a> to remain valid. Keep records of all service visits and use licensed technicians for any repairs. Our <a href='/maintenance-plan'><strong>maintenance plans</strong></a> help ensure your warranty stays in good standing." },

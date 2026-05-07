@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Furnace Installation in {city}",
+        "title": "Frequently Asked Questions about <br>Furnace Installation in {city}",
         "faqs": [
           { "question": "How much does a new furnace installation cost?", "answer": "Furnace installation costs typically range from $3,000 to $7,500 depending on the unit size, efficiency rating, and complexity of the installation. We provide free in-home estimates with upfront pricing." },
           { "question": "How long does a furnace installation take?", "answer": "A standard furnace installation is usually completed in one day, typically 4-8 hours. More complex installations involving <a href='/indoor-air-quality/duct-repair-replacement'><strong>ductwork</strong></a> modifications may take an additional day." },

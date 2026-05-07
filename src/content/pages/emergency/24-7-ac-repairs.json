@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about 24/7 AC Repairs in {city}",
+        "title": "Frequently Asked Questions about <br>24/7 AC Repairs in {city}",
         "faqs": [
           { "question": "Do you charge extra for after-hours AC repairs?", "answer": "We offer competitive rates for emergency services. While after-hours calls may have a service fee, we always provide upfront pricing before starting any work so there are no surprises." },
           { "question": "How quickly can a technician arrive for an emergency AC repair?", "answer": "We prioritize emergency calls and typically have a technician at your door within 1-2 hours, depending on your location in the {city} area. Our dispatch team works around the clock to get you help fast." },

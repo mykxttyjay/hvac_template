@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Duct Repair and Replacement in {city}",
+        "title": "Frequently Asked Questions about <br>Duct Repair and Replacement in {city}",
         "faqs": [
           { "question": "How do I know if my ducts need repair or replacement?", "answer": "Signs include uneven <a href='/heating'><strong>heating</strong></a> or <a href='/air-conditioning'><strong>cooling</strong></a>, excessive dust in your home, unusually high energy bills, rattling or whistling noises from the ductwork, and rooms that are consistently too hot or too cold. Ducts over 15 years old may also need replacement." },
           { "question": "How much does duct repair or replacement cost?", "answer": "Minor duct repairs typically cost $200-$600, while full duct replacement ranges from $2,000 to $6,000 depending on the size of your home and accessibility of the ductwork. We provide detailed estimates before starting any work." },

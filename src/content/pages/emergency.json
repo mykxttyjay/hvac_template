@@ -36,6 +36,7 @@
         "images": [
           "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80"
         ],
+        "imageHeight": "790px",
         "imagePosition": "left"
       }
     },
@@ -82,7 +83,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Emergency HVAC Services",
+        "title": "Frequently Asked Questions about <br>Emergency HVAC Services",
         "faqs": [
           { "question": "What qualifies as an HVAC emergency?", "answer": "An HVAC emergency includes complete system failure during extreme temperatures, gas leaks, carbon monoxide alerts, no heat during freezing weather, or any situation that poses a safety risk. If you're unsure, <a href='/contact'><strong>call us</strong></a> and we'll help you determine the urgency." },
           { "question": "How quickly can you respond to an emergency?", "answer": "We prioritize emergency calls and typically have a technician dispatched within the hour. Response times may vary based on location and demand, but we always aim to reach you as quickly as possible." },

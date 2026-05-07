@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Commercial HVAC Installation in {city}",
+        "title": "Frequently Asked Questions about <br>Commercial HVAC Installation in {city}",
         "faqs": [
           { "question": "How long does a commercial HVAC installation take?", "answer": "Installation timelines vary based on the size and complexity of the project. A small office system may take 2-3 days, while larger commercial installations can take 1-4 weeks. We work around your business schedule to minimize disruption." },
           { "question": "What size commercial HVAC system do I need?", "answer": "System sizing depends on your building's square footage, ceiling height, insulation, occupancy, equipment heat loads, and local climate. Our engineers perform a detailed load calculation to recommend the right system size for optimal efficiency and comfort." },

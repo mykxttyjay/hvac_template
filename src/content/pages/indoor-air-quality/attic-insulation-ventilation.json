@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Attic Insulation and Ventilation in {city}",
+        "title": "Frequently Asked Questions about <br>Attic Insulation and Ventilation in {city}",
         "faqs": [
           { "question": "How do I know if my attic needs more insulation?", "answer": "Signs include high energy bills, uneven temperatures between rooms, ice dams forming on your roof in winter, and your HVAC system running constantly. If your attic insulation is less than 10-14 inches deep, it likely needs to be upgraded." },
           { "question": "What type of attic insulation is best?", "answer": "The best type depends on your attic's structure. Blown-in fiberglass or cellulose is ideal for most attics, while spray foam provides the highest R-value per inch and also acts as an air barrier. Our team will recommend the right solution for your home." },

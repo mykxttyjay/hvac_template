@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Boiler Installation in {city}",
+        "title": "Frequently Asked Questions about <br>Boiler Installation in {city}",
         "faqs": [
           { "question": "How much does a new boiler installation cost?", "answer": "Boiler installation costs typically range from $4,000 to $10,000 depending on the type (combi, system, or conventional), size, and complexity of the installation. We provide free in-home estimates with transparent pricing." },
           { "question": "What type of boiler is best for my home?", "answer": "The best boiler depends on your home's size, hot water demand, and existing setup. Combi boilers are great for smaller homes, system boilers suit medium to large homes, and conventional boilers work well for homes with high hot water demand. Our technicians will recommend the right fit." },

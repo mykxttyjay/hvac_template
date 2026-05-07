@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Furnace Maintenance in {city}",
+        "title": "Frequently Asked Questions about <br>Furnace Maintenance in {city}",
         "faqs": [
           { "question": "How often should I have my furnace tuned up?", "answer": "We recommend an annual furnace tune-up, ideally in the fall before the heating season begins. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system." },
           { "question": "What does a furnace tune-up include?", "answer": "Our comprehensive tune-up includes inspecting and cleaning the burner assembly, checking the heat exchanger for cracks, testing safety controls, lubricating moving parts, checking the <a href='/air-conditioning/thermostats'><strong>thermostat</strong></a>, and replacing the air filter." },

@@ -25,7 +25,7 @@
       "props": {
         "badge": "Heating Experts",
         "title": "Comprehensive Heating Services in {city}",
-        "description": "When temperatures drop, you need a heating system you can count on. {fullName} provides expert <a href='/heating/furnace-repair'><strong>furnace repair</strong></a>, <a href='/heating/furnace-installation-replacement'><strong>installation</strong></a>, <a href='/heating/furnace-tune-up-maintenance'><strong>maintenance</strong></a>, and <a href='/heating/boilers-installation-replacement'><strong>boiler services</strong></a> for homes and businesses throughout the {city} area. Our certified technicians are equipped with the latest tools and training to keep your home warm and comfortable all winter long.",
+        "description": "When temperatures drop, you need a heating system you can count on. {fullName} provides expert <a href='/heating/furnace-repair'><strong>furnace repair</strong></a>, <a href='/heating/furnace-installation-replacement'><strong>installation</strong></a>, <a href='/heating/furnace-tune-up-maintenance'><strong>maintenance</strong></a>, and <a href='/heating/boilers-installation-replacement'><strong>boiler services</strong></a> for homes and businesses throughout the {city} area. Our certified technicians are equipped with the latest tools and training to keep your home warm and comfortable.",
         "features": [
           "Licensed and Insured Professionals",
           "Same-Day Service Available",
@@ -37,6 +37,7 @@
         "images": [
           "https://plus.unsplash.com/premium_photo-1664298589198-b15ff5382648?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
+        "imageHeight": "820px",
         "imagePosition": "left"
       }
     },
@@ -60,7 +61,6 @@
     {
       "component": "FinancingPlansSection",
       "props": {
-        "badge": "Services",
         "title": "Our Heating Services",
         "variant": "services",
         "items": [
@@ -84,7 +84,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Heating Services in {city}",
+        "title": "Frequently Asked Questions about <br>Heating Services in {city}",
         "faqs": [
           { "question": "How often should I service my heating system?", "answer": "We recommend scheduling professional <a href='/heating/furnace-tune-up-maintenance'><strong>heating maintenance</strong></a> at least once a year, ideally in the fall before the heating season begins. Regular tune-ups help prevent breakdowns, improve efficiency, and extend the life of your system." },
           { "question": "What are the signs my furnace needs repair?", "answer": "Common signs include uneven heating, strange noises, frequent cycling on and off, a yellow or flickering pilot light, rising energy bills, and cold air blowing from vents. If you notice any of these, <a href='/contact'><strong>contact us</strong></a> for a diagnostic." },

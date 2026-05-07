@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about AC Installation & Replacement in {city}",
+        "title": "Frequently Asked Questions about <br>AC Installation & Replacement in {city}",
         "faqs": [
           { "question": "How do I know when it's time to replace my AC unit?", "answer": "Consider replacement if your system is over 10-15 years old, requires frequent <a href='/air-conditioning/ac-repair'><strong>repairs</strong></a>, has rising energy bills, or uses outdated R-22 refrigerant. Our technicians can assess your system and recommend the best option." },
           { "question": "How long does a new AC installation take?", "answer": "A standard <a href='/air-conditioning/ac-installation-replacement'><strong>AC installation</strong></a> typically takes one day. More complex installations involving ductwork modifications or multi-zone systems may take 2-3 days. We'll provide a clear timeline before starting." },

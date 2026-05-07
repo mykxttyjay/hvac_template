@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Mini-Split Systems in {city}",
+        "title": "Frequently Asked Questions about <br>Mini-Split Systems in {city}",
         "faqs": [
           { "question": "What is a mini-split system and how does it work?", "answer": "A mini-split system is a ductless heating and cooling solution with an outdoor compressor and one or more indoor air-handling units. They provide zone-based climate control without the need for ductwork, making them ideal for additions, older homes, or specific rooms." },
           { "question": "Are mini-split systems energy efficient?", "answer": "Yes, mini-splits are highly energy efficient. They avoid the energy losses associated with <a href='/indoor-air-quality/duct-repair-replacement'><strong>ductwork</strong></a> and allow you to heat or cool only the rooms you're using, which can significantly reduce your energy bills." },

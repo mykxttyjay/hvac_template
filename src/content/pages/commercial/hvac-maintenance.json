@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Commercial HVAC Maintenance in {city}",
+        "title": "Frequently Asked Questions about <br>Commercial HVAC Maintenance in {city}",
         "faqs": [
           { "question": "How often should commercial HVAC systems be maintained?", "answer": "Commercial systems should be serviced at least twice a year — once before the cooling season and once before the heating season. High-use environments like restaurants, medical facilities, and data centers may require quarterly maintenance." },
           { "question": "What does a commercial HVAC maintenance visit include?", "answer": "Our comprehensive service includes inspecting and cleaning coils, checking refrigerant levels, testing controls and safety devices, lubricating moving parts, inspecting ductwork, checking electrical connections, and calibrating thermostats. We provide a detailed report after each visit." },

@@ -28,7 +28,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about Air Filtration Systems in {city}",
+        "title": "Frequently Asked Questions about <br>Air Filtration Systems in {city}",
         "faqs": [
           { "question": "What does an air filtration system do?", "answer": "An air filtration system removes airborne contaminants like dust, pollen, pet dander, mold spores, and bacteria from your indoor air. It works alongside your <a href='/air-conditioning'><strong>HVAC system</strong></a> to continuously clean the air circulating through your home." },
           { "question": "How often should air filters be replaced?", "answer": "Standard filters should be replaced every 1-3 months depending on usage, pets, and allergies. HEPA and media filters can last 6-12 months. We'll recommend the right schedule based on your system and household needs." },

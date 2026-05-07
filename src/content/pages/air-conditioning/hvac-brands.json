@@ -34,7 +34,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about HVAC Brands in {city}",
+        "title": "Frequently Asked Questions about <br>HVAC Brands in {city}",
         "faqs": [
           { "question": "What HVAC brands do you install and service?", "answer": "We install and service all major HVAC brands including Carrier, Lennox, Trane, Rheem, Goodman, Daikin, Mitsubishi, and more. Our technicians are factory-trained and certified across multiple brands." },
           { "question": "Which HVAC brand is the best for my home?", "answer": "The best brand depends on your budget, home size, and specific needs. We'll help you compare options based on efficiency ratings, <a href='/air-conditioning/hvac-warranties'><strong>warranty coverage</strong></a>, reliability, and value to find the perfect fit for your home." },
