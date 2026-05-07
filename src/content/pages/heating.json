@@ -34,8 +34,8 @@
         ],
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
-        "images": [
-          "https://images.unsplash.com/photo-1618840626133-54463084a141?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+         "images": [
+          "https://plus.unsplash.com/premium_photo-1664298589198-b15ff5382648?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         "imageHeight": "820px",
         "imagePosition": "left"
@@ -47,7 +47,7 @@
         "title": "Why Choose",
         "titleHighlight": "Our Heating Services?",
         "description": "We deliver dependable, energy-efficient heating solutions backed by years of experience and a commitment to keeping your home comfortable.",
-        "image": "https://mydecorative.com/wp-content/uploads/2020/12/heat-repair-service.jpg",
+         "image": "https://mydecorative.com/wp-content/uploads/2020/12/heat-repair-service.jpg",
         "imageAlt": "Heating system service",
         "imagePosition": "left",
         "features": [
@@ -64,7 +64,7 @@
         "title": "Our Heating Services",
         "variant": "services",
         "items": [
-          { "title": "Furnace Repair", "href": "/heating/furnace-repair", "image": "https://plus.unsplash.com/premium_photo-1664298589198-b15ff5382648?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+             { "title": "Furnace Repair", "href": "/heating/furnace-repair", "image": "https://plus.unsplash.com/premium_photo-1664298589198-b15ff5382648?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
           { "title": "Furnace Tune-Up / Maintenance", "href": "/heating/furnace-tune-up-maintenance", "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
           { "title": "Furnace Installation and Replacement", "href": "/heating/furnace-installation-replacement", "image": "https://plus.unsplash.com/premium_photo-1661963078581-a4f091315692?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
           { "title": "Boilers Installation and Replacement", "href": "/heating/boilers-installation-replacement", "image": "https://plus.unsplash.com/premium_photo-1764691250742-d98ba6c66725?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }

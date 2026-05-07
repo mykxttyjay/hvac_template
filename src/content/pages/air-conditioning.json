@@ -34,8 +34,8 @@
         ],
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
-        "images": [
-          "https://images.unsplash.com/photo-1742443243480-b18adf159af7?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "images": [
+          "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Quality-HVAC-Service.webp"
         ],
         "imagePosition": "left",
         "imageHeight": "870px"
@@ -47,7 +47,7 @@
         "title": "Why Choose Us for Air Conditioning Services in",
         "titleHighlight": "{city}?",
         "description": "We deliver dependable, energy-efficient cooling solutions backed by years of experience and a commitment to customer satisfaction.",
-        "image": "https://images.unsplash.com/photo-1650551182956-47efa0f90b64?w=800&q=80",
+         "image": "https://johnh967.sg-host.com/wp-content/uploads/sb-instagram-feed-images/466556611_1575760946412367_152571973762791733_nfull.webp",
         "imageAlt": "Air conditioning units",
         "imagePosition": "left",
         "features": [
@@ -63,10 +63,10 @@
         "title": "Our Air Conditioning Services",
         "variant": "services",
         "items": [
-          { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
-          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
-          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://images.unsplash.com/photo-1650551182956-47efa0f90b64?w=800&q=80" },
-          { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
+          { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg" },
+          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/12/AC-Repair-Services.webp" },
+          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://johnh967.sg-host.com/wp-content/uploads/sb-instagram-feed-images/466556611_1575760946412367_152571973762791733_nfull.webp" },
+          { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://www.askmoss.com/wp-content/uploads/2025/06/thermostat-repair-moss.jpg" }
         ]
       }
     },

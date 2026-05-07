@@ -29,7 +29,7 @@
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
         "images": [
-          "https://images.unsplash.com/photo-1512584927346-c53de69dec17?q=80&w=1177&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Commercial-HVAC-Installation-Service.webp"
         ],
         "imageHeight": "820px",
         "imagePosition": "left"
@@ -41,7 +41,7 @@
         "title": "Why Choose Our Commercial HVAC",
         "titleHighlight": "Services?",
         "description": "We deliver dependable, energy-efficient commercial HVAC solutions backed by years of experience and a commitment to keeping your business comfortable.",
-        "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+        "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Commercial-HVAC-Maintenance-Service.webp",
         "imageAlt": "Commercial HVAC technician",
         "imagePosition": "left",
         "features": [
@@ -59,10 +59,10 @@
         "title": "Our Commercial HVAC Services",
         "variant": "services",
         "items": [
-          { "title": "HVAC Repair", "href": "/commercial/hvac-repair", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
-          { "title": "HVAC Maintenance", "href": "/commercial/hvac-maintenance", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
-          { "title": "HVAC Installation", "href": "/commercial/hvac-installation", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" },
-          { "title": "HVAC Warranty", "href": "/commercial/hvac-warranty", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" }
+          { "title": "HVAC Repair", "href": "/commercial/hvac-repair", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Commercial-HVAC-Repair-Services.webp" },
+          { "title": "HVAC Maintenance", "href": "/commercial/hvac-maintenance", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Commercial-HVAC-Warranty-Service.webp" },
+          { "title": "HVAC Installation", "href": "/commercial/hvac-installation", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Expert-Commercial-HVAC-Maintenance.webp" },
+          { "title": "HVAC Warranty", "href": "/commercial/hvac-warranty", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Commercial-Banner.webp" }
         ]
       }
     },
