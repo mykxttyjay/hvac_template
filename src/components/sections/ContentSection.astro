@@ -13,6 +13,7 @@ interface Props {
   imagePosition?: "left" | "right";
   images?: string[];
   imageAlts?: string[];
+  imageHeight?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   imagePosition = "left",
   images = [],
   imageAlts = [],
+  imageHeight = "420px",
 } = Astro.props;
 
 const pretitle = rawPretitle ? getLocationText(rawPretitle) : undefined;
@@ -56,6 +58,7 @@ const isRight = imagePosition === "right";
             width="960"
             height="720"
             decoding="async"
+            style={`max-height: ${imageHeight};`}
           />
         ) : (
           <Image
@@ -68,6 +71,7 @@ const isRight = imagePosition === "right";
             format="webp"
             quality={75}
             decoding="async"
+            style={`max-height: ${imageHeight};`}
           />
         )
       ) : (
@@ -86,6 +90,7 @@ const isRight = imagePosition === "right";
     <div class="cs-text-inner">
       {badge && (
         <div class="cs-eyebrow">
+          <svg class="cs-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           <span class="cs-eyebrow-text">{badge}</span>
         </div>
       )}
@@ -180,7 +185,7 @@ const isRight = imagePosition === "right";
     overflow: visible;
     padding: 2.5rem 0 2.5rem 0;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-end;
   }
 
@@ -199,10 +204,9 @@ const isRight = imagePosition === "right";
   .cs-image-wrapper {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-end;
     width: 100%;
-    height: 100%;
   }
 
   .cs-vertical-text {
@@ -213,18 +217,17 @@ const isRight = imagePosition === "right";
     width: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
     border-radius: 8px;
     max-width: 78%;
     margin-left: 1.5rem;
     height: auto;
-    max-height: 420px;
   }
 
   @media (min-width: 768px) {
     .cs-image {
       max-width: 78%;
       margin-left: 3rem;
-      max-height: 480px;
     }
   }
 
@@ -232,7 +235,6 @@ const isRight = imagePosition === "right";
     .cs-image {
       max-width: 78%;
       margin-left: 4rem;
-      max-height: 780px;
     }
   }
 
@@ -282,22 +284,36 @@ const isRight = imagePosition === "right";
   /* Eyebrow */
   .cs-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .cs-fan-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   .cs-eyebrow-text {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
+    padding: 0;
+    background: none;
   }
 
   /* Header group - left aligned */
   .cs-header-group {
     text-align: left;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   /* Title */
@@ -322,7 +338,7 @@ const isRight = imagePosition === "right";
     font-size: 18px;
     line-height: 1.8;
     color: var(--brand-secondary);
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.75rem 0;
   }
 
   /* ─── Features: centered grid layout ─── */

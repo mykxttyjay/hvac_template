@@ -48,10 +48,10 @@ const faqs = rawFaqs.map(faq => ({
         <!-- Questions on left -->
         <div class="fq-accordion" data-animate-stagger>
         {faqs.filter(faq => faq.question && faq.answer).map((faq, index) => (
-          <div class:list={["fq-item group", { "is-open": index === 0 }]}>
+          <div class="fq-item group">
             <button
               class="fq-trigger"
-              aria-expanded={index === 0 ? "true" : "false"}
+              aria-expanded="false"
               aria-controls={`fq-panel-${index}`}
               id={`fq-btn-${index}`}
             >
@@ -239,7 +239,7 @@ const faqs = rawFaqs.map(faq => ({
   }
 
   .fq-side-inner {
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     height: 100%;

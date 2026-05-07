@@ -271,12 +271,17 @@ const isRight = imagePosition === "right";
   .csa-img-side {
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .csa-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: center;
     display: block;
   }
 
