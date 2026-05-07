@@ -25,7 +25,7 @@ const faqs = rawFaqs.map(faq => ({
 ---
 
 <section class="fq-section">
-  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
 
     <!-- Two-column layout -->
     <div class="fq-layout">
@@ -34,15 +34,49 @@ const faqs = rawFaqs.map(faq => ({
       <div class="fq-left">
         <div class="fq-header" data-animate="fade-up">
           <div class="fq-eyebrow">
+            <svg class="fq-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             <span class="fq-eyebrow-text">{badge}</span>
           </div>
           <h2 class="fq-title">{title}</h2>
           <div class="fq-divider"></div>
           {subtitle && <p class="fq-subtitle">{subtitle}</p>}
         </div>
+      </div>
 
-        <!-- Side card -->
-        <div class="fq-side" data-animate="fade-up" data-animate-delay="200">
+      <!-- Right: accordion -->
+      <div class="fq-content-wrapper">
+        <!-- Questions on left -->
+        <div class="fq-accordion" data-animate-stagger>
+        {faqs.filter(faq => faq.question && faq.answer).map((faq, index) => (
+          <div class:list={["fq-item group", { "is-open": index === 0 }]}>
+            <button
+              class="fq-trigger"
+              aria-expanded={index === 0 ? "true" : "false"}
+              aria-controls={`fq-panel-${index}`}
+              id={`fq-btn-${index}`}
+            >
+              <span class="fq-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="fq-question">{faq.question}</span>
+              <span class="fq-chevron">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </span>
+            </button>
+            <div
+              class="fq-panel"
+              id={`fq-panel-${index}`}
+              role="region"
+              aria-labelledby={`fq-btn-${index}`}
+            >
+              <div class="fq-answer" set:html={faq.answer} />
+            </div>
+          </div>
+        ))}
+        </div>
+
+        <!-- Card on right -->
+        <div class="fq-side" data-animate="fade-left">
           <div class="fq-side-card">
             <span class="fq-side-accent"></span>
             <div class="fq-side-inner">
@@ -66,36 +100,6 @@ const faqs = rawFaqs.map(faq => ({
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Right: accordion -->
-      <div class="fq-accordion" data-animate-stagger>
-        {faqs.filter(faq => faq.question && faq.answer).map((faq, index) => (
-          <div class="fq-item group">
-            <button
-              class="fq-trigger"
-              aria-expanded="false"
-              aria-controls={`fq-panel-${index}`}
-              id={`fq-btn-${index}`}
-            >
-              <span class="fq-number">{String(index + 1).padStart(2, '0')}</span>
-              <span class="fq-question">{faq.question}</span>
-              <span class="fq-chevron">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 5v14M5 12h14"/>
-                </svg>
-              </span>
-            </button>
-            <div
-              class="fq-panel"
-              id={`fq-panel-${index}`}
-              role="region"
-              aria-labelledby={`fq-btn-${index}`}
-            >
-              <div class="fq-answer" set:html={faq.answer} />
-            </div>
-          </div>
-        ))}
       </div>
 
     </div>
@@ -145,26 +149,41 @@ const faqs = rawFaqs.map(faq => ({
 
   /* ─── Layout ─── */
   .fq-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    max-width: 72rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100%;
     margin: 0 auto;
-    align-items: start;
+    align-items: stretch;
   }
 
   /* ─── Left Column ─── */
   .fq-left {
-    position: sticky;
-    top: 6rem;
+    position: static;
   }
 
   /* ─── Header ─── */
   .fq-header {
     margin-bottom: 2rem;
+    text-align: center;
   }
   .fq-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .fq-fan-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   .fq-eyebrow-text {
     font-size: 0.7rem;
@@ -173,8 +192,8 @@ const faqs = rawFaqs.map(faq => ({
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
+    padding: 0;
+    background: none;
   }
   .fq-title {
     font-size: 2rem;
@@ -189,10 +208,7 @@ const faqs = rawFaqs.map(faq => ({
     .fq-title { font-size: 45px; }
   }
   .fq-divider {
-    width: 3rem;
-    height: 3px;
-    background: var(--brand-highlight);
-    margin-bottom: 1.25rem;
+    display: none;
   }
   .fq-subtitle {
     font-size: 0.95rem;
@@ -203,71 +219,86 @@ const faqs = rawFaqs.map(faq => ({
   /* ─── Side Card ─── */
   .fq-side-card {
     position: relative;
-    background: var(--brand-primary);
+    background: white;
     overflow: hidden;
     transition: all 0.35s ease;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .fq-side-card:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
   }
 
   .fq-side-accent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--brand-highlight);
+    display: none;
   }
 
   .fq-side-inner {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .fq-side-icon {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(244, 145, 29, 0.1);
+    border: 2px solid var(--brand-highlight);
     color: var(--brand-highlight);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .fq-side-card:hover .fq-side-icon {
+    background: var(--brand-highlight);
+    color: white;
+    transform: scale(1.05);
   }
 
   .fq-side-heading {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    color: #fff;
-    margin-bottom: 0.6rem;
+    color: var(--brand-primary);
+    margin-bottom: 0.75rem;
     line-height: 1.25;
   }
   .fq-side-text {
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.45);
-    margin-bottom: 1.5rem;
+    color: var(--brand-secondary);
+    margin-bottom: 1.75rem;
   }
   .fq-side-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.625rem;
-    padding: 0.7rem 1.5rem;
+    padding: 0.9rem 2rem;
     background: var(--brand-highlight);
-    color: var(--brand-primary);
-    font-weight: 700;
-    font-size: 0.75rem;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8rem;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transition: all 0.3s ease;
+    border-radius: 6px;
+    width: fit-content;
   }
   .fq-side-btn:hover {
-    filter: brightness(1.08);
+    filter: brightness(1.1);
     transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(244, 145, 29, 0.3);
   }
   .fq-side-btn svg {
     transition: transform 0.3s ease;
@@ -277,6 +308,25 @@ const faqs = rawFaqs.map(faq => ({
   }
 
   /* ─── Accordion ─── */
+  .fq-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  .fq-image-wrapper {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .fq-image {
+    width: 100%;
+    height: 43vh;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
   .fq-accordion {
     display: flex;
     flex-direction: column;
@@ -285,15 +335,18 @@ const faqs = rawFaqs.map(faq => ({
 
   .fq-item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
-  }
-  .fq-item:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
   }
 
   .fq-item.is-open {
-    border-bottom-color: var(--brand-highlight);
+    border-color: var(--brand-highlight);
+    box-shadow: 0 4px 12px rgba(244, 145, 29, 0.15);
   }
 
   /* Left accent bar on open */
@@ -318,56 +371,71 @@ const faqs = rawFaqs.map(faq => ({
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     background: none;
     border: none;
     cursor: pointer;
     text-align: left;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
   }
   .fq-trigger:hover {
-    background: var(--brand-tertiary);
+    background: rgba(244, 145, 29, 0.05);
+  }
+  .fq-item.is-open .fq-trigger {
+    background: rgba(244, 145, 29, 0.05);
   }
 
   .fq-number {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 800;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     letter-spacing: 0.05em;
     color: var(--brand-highlight);
     background: var(--brand-primary);
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  .fq-item.is-open .fq-number {
+    background: var(--brand-highlight);
+    color: white;
+    transform: scale(1.05);
   }
 
   .fq-question {
     flex: 1;
-    font-size: 0.95rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--brand-primary);
     line-height: 1.35;
+    transition: color 0.3s ease;
+  }
+  .fq-item.is-open .fq-question {
+    color: var(--brand-highlight);
   }
 
   .fq-chevron {
     flex-shrink: 0;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     background: var(--brand-tertiary);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 2px solid rgba(0, 0, 0, 0.06);
     color: var(--brand-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    border-radius: 6px;
   }
   .fq-item.is-open .fq-chevron {
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
-    color: var(--brand-highlight);
+    background: var(--brand-highlight);
+    border-color: var(--brand-highlight);
+    color: white;
     transform: rotate(45deg);
   }
 
@@ -380,7 +448,7 @@ const faqs = rawFaqs.map(faq => ({
   }
 
   .fq-answer {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--brand-secondary);
     padding: 0 1.5rem 1.5rem 4.5rem;
@@ -395,8 +463,14 @@ const faqs = rawFaqs.map(faq => ({
   /* ─── Responsive ─── */
   @media (max-width: 768px) {
     .fq-layout {
+      gap: 2rem;
+    }
+    .fq-content-wrapper {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .fq-side {
+      position: static;
     }
     .fq-left {
       position: static;

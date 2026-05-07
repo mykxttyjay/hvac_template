@@ -202,7 +202,7 @@ export function Navbar() {
       </div>
 
       {/* ── Row 2: Cream service bar — nav + actions ── */}
-      <div className="bg-brand-tertiary border-b border-brand-highlight/20 shadow-sm" onMouseLeave={handleLeave}>
+      <div className="bg-[#fef9f3] border-b border-brand-highlight/20 shadow-sm" onMouseLeave={handleLeave}>
         <div className="container mx-auto px-6 md:px-12 lg:px-16">
           <div className="flex h-[58px] items-center gap-4">
             {/* Service nav links */}
