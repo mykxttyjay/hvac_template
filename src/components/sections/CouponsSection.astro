@@ -153,18 +153,11 @@ const defaultBackgrounds = [
   .cpn-grid > :nth-child(2) {
     transform: translateY(2rem) scale(1.08);
   }
-  .cpn-grid > :nth-child(2):hover {
-    transform: translateY(calc(2rem - 6px)) scale(1.08);
-  }
   
   /* Make left and right cards bigger too */
   .cpn-grid > :nth-child(1),
   .cpn-grid > :nth-child(3) {
     transform: scale(1.0);
-  }
-  .cpn-grid > :nth-child(1):hover,
-  .cpn-grid > :nth-child(3):hover {
-    transform: translateY(-6px) scale(1.0);
   }
   
   /* Increase image height for all cards */
@@ -197,11 +190,6 @@ const defaultBackgrounds = [
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     border-radius: 0;
     overflow: hidden;
-  }
-
-  .cpn-coupon:hover {
-    transform: translateY(-8px) rotate(-1deg);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   }
   
   /* Orange dashed outline for 1st and 3rd cards */
