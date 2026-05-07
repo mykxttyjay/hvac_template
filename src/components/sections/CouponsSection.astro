@@ -42,7 +42,7 @@ const defaultBackgrounds = [
     <div class="mb-12 text-center" data-animate="fade-scale">
       <div class="flex items-center justify-center gap-3 mb-4">
         <svg class="cpn-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">Limited Time</span>
+        <span class="font-bold uppercase tracking-[0.2em] text-brand-highlight" style="font-size: 14px;">Limited Time</span>
       </div>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-brand-primary">{title}</h2>
     </div>
@@ -92,7 +92,7 @@ const defaultBackgrounds = [
               <div class="cpn-discount-row">
                 <span class="cpn-discount">{coupon.discount}</span>
               </div>
-              <p class="cpn-desc">{coupon.description}</p>
+              <p class="cpn-desc" set:html={coupon.description} />
               <div class="cpn-footer">
                 <div class="cpn-dashed-border"></div>
                 <a href={coupon.buttonHref || "/contact"} class="cpn-btn">
@@ -266,22 +266,22 @@ const defaultBackgrounds = [
     padding-bottom: 0.3rem;
   }
 
-  /* Corner ribbon */
+  /* Corner badge */
   .cpn-ribbon {
     position: absolute;
-    top: 20px;
-    right: -35px;
+    top: 15px;
+    right: 15px;
     z-index: 5;
     background: var(--brand-highlight);
     color: #ffffff;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    padding: 0.5rem 3rem;
-    transform: rotate(45deg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.12em;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: flex;
     align-items: center;
@@ -399,10 +399,10 @@ const defaultBackgrounds = [
     align-items: center;
     gap: 0.5rem;
     background: var(--brand-highlight);
-    color: var(--brand-primary);
+    color: #ffffff;
     padding: 0.75rem 1.75rem;
     font-weight: 800;
-    font-size: 0.75rem;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.08em;

@@ -37,7 +37,7 @@
           { 
             "label": "Repair Special", 
             "discount": "$150 OFF", 
-            "description": "Save $150 on Any Repair. Valid for repairs over $500", 
+            "description": "Save $150 on Any Repair. <br>Valid for repairs over $500", 
             "buttonText": "BOOK NOW",
             "backgroundImage": "/images/coupon2.webp"
           },
