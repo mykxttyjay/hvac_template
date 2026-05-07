@@ -149,35 +149,16 @@ const defaultBackgrounds = [
     align-items: end;
   }
 
-  /* Make the middle card much bigger and push it down */
-  .cpn-grid > :nth-child(2) {
-    transform: translateY(2rem) scale(1.08);
-  }
-  
-  /* Make left and right cards bigger too */
+  /* All cards same size */
   .cpn-grid > :nth-child(1),
+  .cpn-grid > :nth-child(2),
   .cpn-grid > :nth-child(3) {
-    transform: scale(1.0);
+    transform: none;
   }
   
-  /* Increase image height for all cards */
+  /* Uniform image height for all cards */
   .cpn-img-strip {
     height: 200px;
-  }
-  
-  /* Increase image height for center card */
-  .cpn-grid > :nth-child(2) .cpn-img-strip {
-    height: 220px;
-  }
-  
-  /* Larger discount text for center card */
-  .cpn-grid > :nth-child(2) .cpn-discount {
-    font-size: 3.25rem;
-  }
-  
-  /* Larger description for center card */
-  .cpn-grid > :nth-child(2) .cpn-desc {
-    font-size: 0.9rem;
   }
 
   /* ─── Coupon Card ─── */

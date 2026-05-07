@@ -32,12 +32,13 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
     </svg>
   </div>
 
-  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28 relative z-10">
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20 relative z-10">
     <div class="cc-layout">
 
       <!-- Text side -->
       <div class="cc-text" data-animate="fade-right">
         <div class="cc-eyebrow">
+          <svg class="cc-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           <span class="cc-eyebrow-text">Join Us</span>
         </div>
 
@@ -90,13 +91,7 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
   }
 
   .cc-slope {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
+    display: none;
   }
 
   /* ─── Layout ─── */
@@ -104,14 +99,25 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    max-width: 72rem;
+    max-width: 100%;
     margin: 0 auto;
     align-items: center;
+    width: 100%;
   }
 
   /* ─── Text Side ─── */
+  .cc-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
   .cc-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
   }
   .cc-eyebrow-text {
     font-size: 14px;
@@ -120,8 +126,20 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--brand-highlight);
+    padding: 0;
+    background: none;
+    border: none;
+  }
+  .cc-fan-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .cc-title {
@@ -140,12 +158,12 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
   .cc-divider {
     width: 3rem;
     height: 3px;
-    background: var(--brand-highlight);
+    background: transparent;
     margin-bottom: 1.25rem;
   }
 
   .cc-desc {
-    font-size: 0.95rem;
+    font-size: 18px;
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.55);
     margin-bottom: 2rem;
@@ -203,13 +221,7 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
   }
 
   .cc-image-strip {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 3px;
-    height: 40%;
-    background: var(--brand-highlight);
-    z-index: 2;
+    display: none;
   }
 
   .cc-image-placeholder {

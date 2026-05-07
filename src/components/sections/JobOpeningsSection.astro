@@ -24,13 +24,15 @@ const introTitle = rawIntroTitle ? getLocationText(rawIntroTitle) : undefined;
 const introDescription = rawIntroDescription ? getLocationText(rawIntroDescription) : undefined;
 ---
 
-<section class="jo-section" id="openings">
-  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+<section class="jo-section" id="openings" style="background-image: url('https://images.unsplash.com/photo-1615799998603-7c6270a45196?q=80&w=704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <div class="absolute inset-0 bg-white/75"></div>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20 relative z-10">
 
     {/* Intro header */}
     {introTitle && (
       <div class="jo-intro" data-animate="fade-up">
         <div class="jo-eyebrow">
+          <svg class="jo-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
           <span class="jo-eyebrow-text">Careers</span>
         </div>
         <h2 class="jo-intro-title">{introTitle}</h2>
@@ -88,18 +90,35 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
 <style>
   .jo-section {
     background: var(--brand-tertiary);
+    position: relative;
+    overflow: hidden;
   }
 
   /* ─── Intro Header ─── */
   .jo-intro {
     text-align: center;
     margin-bottom: 3rem;
-    max-width: 48rem;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
   .jo-eyebrow {
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .jo-fan-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   .jo-eyebrow-text {
     font-size: 14px;
@@ -108,8 +127,8 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
     letter-spacing: 0.2em;
     color: var(--brand-highlight);
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--brand-primary);
+    padding: 0;
+    background: none;
   }
   .jo-intro-title {
     font-size: 2rem;
@@ -124,13 +143,10 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
     .jo-intro-title { font-size: 45px; }
   }
   .jo-divider {
-    width: 3rem;
-    height: 3px;
-    background: var(--brand-highlight);
-    margin: 0 auto 1.25rem;
+    display: none;
   }
   .jo-intro-desc {
-    font-size: 0.95rem;
+    font-size: 1.125rem;
     line-height: 1.75;
     color: var(--brand-secondary);
   }
@@ -138,24 +154,23 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
   /* ─── Subheader ─── */
   .jo-subheader {
     margin-bottom: 2.5rem;
-    max-width: 64rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
   .jo-subheader-inner {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     margin-bottom: 0.5rem;
   }
   .jo-subheader-line {
-    width: 3px;
-    height: 24px;
-    background: var(--brand-highlight);
-    flex-shrink: 0;
+    display: none;
   }
   .jo-subheader-title {
-    font-size: 0.85rem;
+    font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -173,8 +188,9 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 64rem;
+    max-width: 100%;
     margin: 0 auto;
+    width: 100%;
   }
 
   /* ─── Card ─── */
@@ -224,21 +240,23 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     min-height: 280px;
   }
 
   .jo-card-title {
-    font-size: 1.1rem;
+    font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--brand-primary);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
     line-height: 1.25;
   }
 
   .jo-card-type {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -246,15 +264,15 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
   }
 
   .jo-card-sep {
-    width: 2rem;
+    width: 3rem;
     height: 2px;
     background: var(--brand-highlight);
-    margin: 1.25rem 0;
+    margin: 1.5rem 0;
   }
 
   .jo-card-resp {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.7;
     color: var(--brand-secondary);
     margin-bottom: auto;
     padding-bottom: 1.5rem;
@@ -267,12 +285,13 @@ const introDescription = rawIntroDescription ? getLocationText(rawIntroDescripti
   .jo-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.625rem;
-    padding: 0.7rem 1.5rem;
+    padding: 0.85rem 2rem;
     background: var(--brand-primary);
     color: #fff;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.08em;
