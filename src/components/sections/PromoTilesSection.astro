@@ -202,46 +202,59 @@ const tiles = rawTiles.map(tile => ({
   .pt-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 76rem;
+    gap: 2rem;
+    max-width: 100%;
     margin: 0 auto;
-    align-items: end;
+    align-items: center;
   }
 
   @media (min-width: 768px) {
     .pt-grid {
       grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
     }
+    /* Center card larger */
     .pt-grid > :nth-child(2) {
-      transform: translateY(-1.5rem);
+      transform: scale(1.12) translateY(-1rem);
     }
     .pt-grid > :nth-child(2):hover {
-      transform: translateY(calc(-1.5rem - 4px));
+      transform: scale(1.12) translateY(calc(-1rem - 6px));
+    }
+    /* Side cards same height */
+    .pt-grid > :nth-child(1),
+    .pt-grid > :nth-child(3) {
+      height: 520px;
+    }
+    .pt-grid > :nth-child(2) {
+      height: 580px;
     }
   }
 
   /* ─── Card ─── */
   .pt-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(50, 50, 55, 1) 0%, rgba(35, 35, 40, 1) 100%);
+    border: 2px solid rgba(244, 145, 29, 0.4);
     overflow: hidden;
     transition: all 0.35s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
   }
   .pt-card:hover {
-    background: rgba(255, 255, 255, 0.07);
+    background: linear-gradient(135deg, rgba(55, 55, 60, 1) 0%, rgba(40, 40, 45, 1) 100%);
     border-color: var(--brand-highlight);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6), 0 0 50px rgba(244, 145, 29, 0.25);
   }
 
   /* Featured card */
   .pt-card--featured {
     border-color: var(--brand-highlight);
-    box-shadow: 0 0 0 1px var(--brand-highlight);
+    background: linear-gradient(135deg, rgba(55, 55, 60, 1) 0%, rgba(40, 40, 45, 1) 100%);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(244, 145, 29, 0.2);
   }
   .pt-card--featured:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 0 0 30px color-mix(in srgb, var(--brand-highlight) 15%, transparent);
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.7), 0 0 60px rgba(244, 145, 29, 0.35);
   }
 
   /* ─── Background Image ─── */
@@ -264,8 +277,8 @@ const tiles = rawTiles.map(tile => ({
     inset: 0;
     background: linear-gradient(
       160deg,
-      color-mix(in srgb, var(--brand-primary) 92%, transparent) 0%,
-      color-mix(in srgb, var(--brand-primary) 85%, transparent) 100%
+      color-mix(in srgb, var(--brand-primary) 88%, transparent) 0%,
+      color-mix(in srgb, var(--brand-primary) 80%, transparent) 100%
     );
   }
 
@@ -323,21 +336,7 @@ const tiles = rawTiles.map(tile => ({
 
   /* ─── Icon ─── */
   .pt-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--brand-highlight);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-  }
-  .pt-card:hover .pt-icon {
-    background: var(--brand-highlight);
-    border-color: var(--brand-highlight);
-    color: #ffffff;
+    display: none;
   }
 
   /* ─── Content ─── */
