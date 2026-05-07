@@ -39,13 +39,31 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 
 {variant === "compact" ? (
   <!-- ============ COMPACT ============ -->
-  <section class="sa-section py-16 md:py-24">
+  <section class="sa-section py-12 md:py-16">
     <div class="container mx-auto px-6 md:px-12 lg:px-16">
-      <div class="sa-compact-wrap overflow-hidden max-w-[1100px] mx-auto" data-animate="fade-up">
-        <div class="grid md:grid-cols-2">
+      <div class="sa-compact-wrap overflow-hidden" data-animate="fade-up">
+        <div class="grid md:grid-cols-2 gap-0 items-center">
+
+          <!-- Content side -->
+          <div class="flex flex-col justify-center bg-white pr-6 md:pr-12">
+            <div class="max-w-[75%]">
+              <div class="sa-eyebrow mb-5">
+                <svg class="sa-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span class="sa-eyebrow-text">Service Area</span>
+              </div>
+
+              <h2 class="sa-title text-2xl md:text-3xl">{title}</h2>
+              <p class="sa-desc mb-6" set:html={description} />
+
+              <a href={buttonHref} class="sa-btn">
+                {buttonText}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
 
           <!-- Map side -->
-          <div class="sa-map-side relative min-h-[280px] md:min-h-[360px]">
+          <div class="sa-map-side relative min-h-[280px] md:min-h-[360px] -ml-12 rounded-lg overflow-hidden">
             {embedUrl ? (
               <iframe
                 src={embedUrl}
@@ -64,24 +82,6 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-brand-secondary/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
             )}
-          </div>
-
-          <!-- Content side -->
-          <div class="p-8 md:p-10 flex flex-col justify-center bg-white">
-            <div class="sa-eyebrow mb-5">
-              <span class="sa-eyebrow-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <span class="sa-eyebrow-text">Service Area</span>
-            </div>
-
-            <h2 class="sa-title text-2xl md:text-3xl">{title}</h2>
-            <p class="sa-desc" set:html={description} />
-
-            <a href={buttonHref} class="sa-btn">
-              {buttonText}
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 
 <style>
   .sa-section {
-    background: var(--background);
+    background: #ffffff;
   }
 
   .sa-full {
@@ -220,8 +220,8 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
     margin-bottom: 1.5rem;
   }
   .sa-fan-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     color: var(--brand-highlight);
     animation: spin 3s linear infinite;
     flex-shrink: 0;
@@ -422,7 +422,7 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
 
   /* ─── Compact ─── */
   .sa-compact-wrap {
-    border: 1px solid rgba(0,0,0,0.06);
+    border: none;
   }
 
   /* ─── Responsive ─── */
