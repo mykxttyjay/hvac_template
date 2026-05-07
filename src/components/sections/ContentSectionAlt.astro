@@ -51,69 +51,35 @@ const isRight = imagePosition === "right";
 <section class="csa-section">
   <div class="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
 
-    <!-- Banner strip -->
-    <div class:list={["csa-banner", { "csa-banner--flipped": isRight }]} data-animate="fade-up">
-
-      <!-- Dark text side -->
-      <div class="csa-dark">
-        <!-- Decorative arcs -->
-        <div class="csa-arcs">
-          <div class="csa-arc csa-arc--1"></div>
-          <div class="csa-arc csa-arc--2"></div>
-          <div class="csa-arc csa-arc--3"></div>
+    <!-- Centered header section -->
+    <div class="csa-header" data-animate="fade-up">
+      {badge && (
+        <div class="csa-badge-wrap">
+          <div class="csa-badge-line"></div>
+          <span class="csa-badge">{badge}</span>
         </div>
+      )}
 
-        <div class="csa-dark-content">
-          {badge && (
-            <div class="csa-badge-wrap">
-              <div class="csa-badge-line"></div>
-              <span class="csa-badge">{badge}</span>
-            </div>
-          )}
-
-          <h2 class="csa-title">
-            {title}{" "}
-            {titleHighlight && (
-              <span class="csa-title-hl">{titleHighlight}</span>
-            )}
-          </h2>
-
-          <p class="csa-desc" set:html={description} />
-
-          {buttonHref && (
-            <a href={buttonHref} class="csa-btn">
-              {buttonText || "Read More"}
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          )}
-        </div>
-      </div>
-
-      <!-- Image side -->
-      <div class="csa-img-side">
-        {image ? (
-          <Image
-            src={image}
-            alt={imageAlt}
-            class="csa-img"
-            width={800}
-            height={500}
-            format="webp"
-            quality={75}
-            loading="lazy"
-            decoding="async"
-          />
-        ) : (
-          <div class="csa-img csa-img--placeholder">
-            <span>Image</span>
-          </div>
+      <h2 class="csa-title">
+        {title}{" "}
+        {titleHighlight && (
+          <span class="csa-title-hl">{titleHighlight}</span>
         )}
-      </div>
+      </h2>
+
+      <p class="csa-desc" set:html={description} />
+
+      {buttonHref && (
+        <a href={buttonHref} class="csa-btn">
+          {buttonText || "Read More"}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      )}
     </div>
 
-    <!-- Features below the banner (if any) -->
+    <!-- Features below the header (if any) -->
     {features.length > 0 && (
       <div class="csa-features" data-animate-stagger>
         {featuresTitle && (
@@ -136,88 +102,50 @@ const isRight = imagePosition === "right";
 
 <style>
   .csa-section {
-    background: var(--background);
-  }
-
-  /* ─── Banner Strip ─── */
-  .csa-banner {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    overflow: hidden;
-  }
-  .csa-banner--flipped {
-    grid-template-columns: 60% 40%;
-    direction: rtl;
-  }
-  .csa-banner--flipped > * {
-    direction: ltr;
-  }
-
-  /* ─── Dark Side ─── */
-  .csa-dark {
+    background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
-    background: var(--brand-primary);
-    padding: 2.5rem 2.5rem;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
   }
-
-  /* Decorative arcs */
-  .csa-arcs {
+  .csa-section::before {
+    content: '';
     position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 140px;
-    height: 140px;
-    pointer-events: none;
-  }
-  .csa-arc {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .csa-arc--1 {
-    width: 100%;
-    height: 100%;
     inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 0;
   }
-  .csa-arc--2 {
-    width: 70%;
-    height: 70%;
-    bottom: 0;
-    right: 0;
-  }
-  .csa-arc--3 {
-    width: 40%;
-    height: 40%;
-    bottom: 0;
-    right: 0;
+  .csa-section > .container {
+    position: relative;
+    z-index: 1;
   }
 
-  .csa-dark-content {
-    position: relative;
-    z-index: 2;
+  /* ─── Centered Header ─── */
+  .csa-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
   }
 
   /* Badge */
   .csa-badge-wrap {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   .csa-badge-line {
-    width: 2rem;
-    height: 3px;
+    width: 3rem;
+    height: 4px;
     background: var(--brand-highlight);
     flex-shrink: 0;
   }
   .csa-badge {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     color: var(--brand-highlight);
   }
 
@@ -225,74 +153,65 @@ const isRight = imagePosition === "right";
   .csa-title {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 45px;
     line-height: 1.15;
-    color: #fff;
-    margin-bottom: 0.75rem;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
   }
   .csa-title-hl {
     color: var(--brand-highlight);
-  }
-  @media (min-width: 1024px) {
-    .csa-title { font-size: 45px; }
+    display: inline-block;
+    position: relative;
   }
 
   /* Description */
   .csa-desc {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1.5rem;
-    max-width: 400px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--brand-secondary);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* CTA */
   .csa-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
+    gap: 0.625rem;
+    padding: 0.875rem 2rem;
     background: var(--brand-highlight);
     color: var(--brand-primary);
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 800;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     transition: all 0.3s ease;
-  }
-  .csa-btn:hover {
-    filter: brightness(1.08);
-    transform: translateX(4px);
-  }
-
-  /* ─── Image Side ─── */
-  .csa-img-side {
+    box-shadow: 0 4px 16px rgba(255, 165, 0, 0.3);
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-
-  .csa-img {
+  .csa-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
   }
-
-  .csa-img--placeholder {
-    background: var(--brand-tertiary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 280px;
-    color: var(--muted-foreground);
-    font-size: 0.875rem;
+  .csa-btn:hover::before {
+    left: 100%;
+  }
+  .csa-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 165, 0, 0.4);
   }
 
   /* ─── Features Grid (below banner) ─── */
@@ -317,35 +236,57 @@ const isRight = imagePosition === "right";
   }
 
   .csa-feature {
-    padding: 1.75rem;
-    border: 1px solid color-mix(in srgb, var(--brand-primary) 8%, transparent);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 2rem 1.75rem;
+    border: 2px solid color-mix(in srgb, var(--brand-primary) 8%, transparent);
+    transition: all 0.3s ease;
+    position: relative;
+    background: white;
+    overflow: hidden;
+  }
+  .csa-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--brand-highlight);
+    transition: height 0.3s ease;
   }
   .csa-feature:hover {
     border-color: var(--brand-highlight);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+  .csa-feature:hover::before {
+    height: 100%;
   }
 
   .csa-feature-num {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 800;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--brand-highlight);
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: color-mix(in srgb, var(--brand-highlight) 10%, transparent);
+    border-radius: 4px;
   }
 
   .csa-feature-title {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.125rem;
     color: var(--brand-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
   }
 
   .csa-feature-desc {
-    font-size: 0.9rem;
-    line-height: 1.65;
+    font-size: 0.9375rem;
+    line-height: 1.7;
     color: var(--brand-secondary);
   }
   .csa-feature-desc :global(a) {
@@ -360,16 +301,14 @@ const isRight = imagePosition === "right";
 
   /* ─── Responsive ─── */
   @media (max-width: 768px) {
-    .csa-banner,
-    .csa-banner--flipped {
-      grid-template-columns: 1fr;
-      direction: ltr;
+    .csa-header {
+      margin-bottom: 2rem;
     }
-    .csa-dark {
-      padding: 2rem 1.5rem;
+    .csa-title {
+      font-size: 2rem;
     }
-    .csa-img-side {
-      max-height: 260px;
+    .csa-desc {
+      font-size: 1rem;
     }
     .csa-features-grid {
       grid-template-columns: 1fr;

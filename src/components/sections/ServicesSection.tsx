@@ -204,12 +204,12 @@ export function ServicesSection({ title, description, categories }: Props) {
         {/* Header */}
         <div className={`ss-r-header transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="ss-r-eyebrow">
+            <svg className="ss-r-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             <span className="ss-r-eyebrow-text">Our Services</span>
           </div>
-          <div className="ss-r-header-grid">
-            <h2 className="ss-r-title">{title}</h2>
-            <p className="ss-r-desc">{description}</p>
-          </div>
+          <h2 className="ss-r-title">{title}</h2>
+          <div className="ss-r-divider"></div>
+          <p className="ss-r-desc">{description}</p>
         </div>
 
         {/* Tabs */}
@@ -280,93 +280,119 @@ export function ServicesSection({ title, description, categories }: Props) {
 
         /* ─── Header ─── */
         .ss-r-header {
-          margin-bottom: 2.5rem;
+          margin-bottom: 3rem;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
         }
         .ss-r-eyebrow {
           margin-bottom: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+        }
+        .ss-r-fan-icon {
+          width: 20px;
+          height: 20px;
+          color: var(--brand-highlight);
+          animation: spin 3s linear infinite;
+          flex-shrink: 0;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         .ss-r-eyebrow-text {
-          font-size: 0.7rem;
+          font-size: 0.75rem;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.2em;
           color: var(--brand-highlight);
-          display: inline-block;
-          padding: 0.4rem 1rem;
-          background: var(--brand-primary);
-        }
-
-        .ss-r-header-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 1rem;
-        }
-        @media (min-width: 1024px) {
-          .ss-r-header-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-          }
         }
 
         .ss-r-title {
-          font-size: 2rem;
+          font-size: 2.5rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: -0.01em;
           line-height: 1.1;
           color: var(--brand-primary);
+          margin-bottom: 1rem;
         }
         @media (min-width: 768px) {
-          .ss-r-title { font-size: 2.5rem; }
+          .ss-r-title { font-size: 45px; }
+        }
+
+        .ss-r-divider {
+          width: 60px;
+          height: 4px;
+          background: var(--brand-highlight);
+          margin: 0 auto 1.5rem;
         }
 
         .ss-r-desc {
-          font-size: 0.95rem;
+          font-size: 18px;
           line-height: 1.75;
           color: var(--brand-secondary);
+          max-width: 700px;
+          margin: 0 auto;
         }
 
         /* ─── Tabs ─── */
         .ss-r-tabs {
           display: flex;
           flex-wrap: wrap;
-          gap: 0;
-          margin-bottom: 2.5rem;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.18);
+          justify-content: center;
+          gap: 0.5rem 1rem;
+          margin-bottom: 3rem;
         }
 
         .ss-r-tab {
           position: relative;
-          padding: 0.85rem 1.5rem;
+          padding: 0.75rem 1.75rem;
           font-size: 0.75rem;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.1em;
           color: var(--brand-secondary);
-          background: none;
-          border: none;
+          background: white;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
           cursor: pointer;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
+          overflow: hidden;
+        }
+        .ss-r-tab::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: var(--brand-primary);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         .ss-r-tab:hover {
-          color: var(--brand-primary);
+          border-color: var(--brand-primary);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         .ss-r-tab--active {
-          color: var(--brand-primary);
+          color: white;
+          border-color: var(--brand-primary);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+        .ss-r-tab--active::before {
+          opacity: 1;
+        }
+
+        .ss-r-tab-text {
+          position: relative;
+          z-index: 1;
         }
 
         .ss-r-tab-bar {
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: transparent;
-          transition: background 0.3s ease;
-        }
-        .ss-r-tab--active .ss-r-tab-bar {
-          background: var(--brand-highlight);
+          display: none;
         }
 
         /* ─── Cards Grid ─── */
@@ -391,7 +417,8 @@ export function ServicesSection({ title, description, categories }: Props) {
           position: relative;
           display: block;
           background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
+          border: 2px solid rgba(0, 0, 0, 0.06);
+          border-radius: 12px;
           overflow: hidden;
           text-decoration: none;
           color: inherit;
@@ -399,84 +426,90 @@ export function ServicesSection({ title, description, categories }: Props) {
         }
         .ss-r-card:hover {
           border-color: var(--brand-highlight);
-          transform: translateY(-4px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+          transform: translateY(-6px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
         }
 
-        /* Left accent strip */
+        /* Top accent strip */
         .ss-r-card-strip {
           position: absolute;
           top: 0;
           left: 0;
-          width: 3px;
+          right: 0;
+          width: 100%;
           height: 0;
-          background: var(--brand-highlight);
+          background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-highlight) 100%);
           transition: height 0.35s ease;
         }
         .ss-r-card:hover .ss-r-card-strip {
-          height: 100%;
+          height: 4px;
         }
 
         .ss-r-card-inner {
-          padding: 1.75rem 1.5rem;
+          padding: 2rem 1.75rem;
           display: flex;
           flex-direction: column;
-          min-height: 180px;
+          min-height: 220px;
         }
 
         /* Icon */
         .ss-r-icon {
-          width: 48px;
-          height: 48px;
+          width: 56px;
+          height: 56px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: var(--brand-tertiary);
-          border: 1px solid rgba(0, 0, 0, 0.06);
+          background: color-mix(in srgb, var(--brand-highlight) 10%, transparent);
+          border: 2px solid color-mix(in srgb, var(--brand-highlight) 20%, transparent);
+          border-radius: 8px;
           color: var(--brand-primary);
-          margin-bottom: 1.25rem;
+          margin-bottom: 1.5rem;
           transition: all 0.3s ease;
         }
         .ss-r-card:hover .ss-r-icon {
           background: var(--brand-highlight);
           border-color: var(--brand-highlight);
           color: var(--brand-primary);
+          transform: scale(1.05);
         }
 
         .ss-r-card-title {
-          font-size: 1rem;
+          font-size: 1.05rem;
           font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.02em;
           color: var(--brand-primary);
-          margin-bottom: 0.5rem;
-          line-height: 1.25;
+          margin-bottom: 0.75rem;
+          line-height: 1.3;
           transition: color 0.3s ease;
+        }
+        .ss-r-card:hover .ss-r-card-title {
+          color: var(--brand-highlight);
         }
 
         .ss-r-card-desc {
-          font-size: 0.85rem;
-          line-height: 1.6;
+          font-size: 0.9rem;
+          line-height: 1.65;
           color: var(--brand-secondary);
           flex: 1;
-          margin-bottom: 1rem;
+          margin-bottom: 1.25rem;
         }
 
         /* Arrow */
         .ss-r-arrow {
-          width: 32px;
-          height: 32px;
+          width: 40px;
+          height: 40px;
           display: flex;
           align-items: center;
           justify-content: center;
           background: var(--brand-tertiary);
+          border-radius: 50%;
           color: var(--brand-secondary);
           transition: all 0.3s ease;
+          align-self: flex-start;
         }
         .ss-r-card:hover .ss-r-arrow {
           background: var(--brand-highlight);
           color: var(--brand-primary);
-          transform: translateX(4px);
+          transform: translateX(6px) scale(1.1);
         }
       `}</style>
     </section>

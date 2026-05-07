@@ -51,7 +51,7 @@
         "imageAlt": "Air conditioning units",
         "imagePosition": "left",
         "features": [
-          { "title": "Experienced Local Professionals", "description": "Our certified HVAC technicians have years of hands-on experience serving {city} homeowners and businesses with reliable cooling solutions." },
+          { "title": "Experienced Local Professionals", "description": "Our certified HVAC technicians have years of hands-on experience serving {city} homeowners and businesses with cooling solutions." },
           { "title": "Fast Response Times", "description": "We understand that AC problems can't wait. That's why we offer same-day and <a href='/emergency/24-7-ac-repairs'><strong>emergency service</strong></a> to get your system back up and running quickly." },
           { "title": "Transparent Pricing", "description": "No hidden fees or surprise charges. We provide upfront estimates so you know exactly what to expect before any work begins." }
         ]
@@ -83,7 +83,7 @@
     {
       "component": "FAQSection",
       "props": {
-        "title": "Frequently Asked Questions about AC Services in {city}",
+        "title": "Frequently Asked Questions about<br>AC Services in {city}",
         "faqs": [
           { "question": "What types of air conditioning systems do you service?", "answer": "We service all types of AC systems including central air conditioning, ductless <a href='/air-conditioning/mini-split-systems'><strong>mini-splits</strong></a>, window units, heat pumps, and <a href='/commercial'><strong>commercial HVAC systems</strong></a>. Our technicians are trained to work with all major <a href='/air-conditioning/hvac-brands'><strong>brands</strong></a>." },
           { "question": "How often should I schedule AC maintenance?", "answer": "We recommend scheduling professional <a href='/air-conditioning/ac-tune-up-maintenance'><strong>AC maintenance</strong></a> at least once a year, ideally in the spring before the cooling season begins. Regular maintenance helps prevent breakdowns, improves efficiency, and extends the life of your system." },

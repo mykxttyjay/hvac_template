@@ -436,11 +436,12 @@ function getIcon(key?: string): string {
   }
   @media (min-width: 1024px) {
     .fps-svc-grid {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
     .fps-svc-grid--narrow {
       grid-template-columns: repeat(3, 1fr);
       max-width: 100%;
+      justify-content: center;
     }
   }
 
