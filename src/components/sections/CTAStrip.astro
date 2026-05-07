@@ -38,34 +38,34 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
 <section class="cta-strip" style={borderStyle}>
   <div class="container mx-auto px-6 md:px-12 lg:px-16">
     <div class="cta-inner" data-animate="fade-up">
-      <!-- Left: phone + button -->
+      <!-- Left: phone -->
       <div class="cta-left">
-        <div class="cta-phone-section">
-          <div class="cta-phone">
-            <span class="cta-phone-label">{phoneLabel}</span>
-            <a href={`tel:${phone}`} class="cta-phone-number">{phone}</a>
-          </div>
-          <a href={buttonHref} class="cta-btn">
-            {buttonText}
-          </a>
+        <div class="cta-phone">
+          <span class="cta-phone-label">{phoneLabel}</span>
+          <a href={`tel:${phone}`} class="cta-phone-number">{phone}</a>
         </div>
       </div>
 
-      <!-- Right: features -->
-      <div class="cta-features" data-animate-stagger>
-        {features.map((feature) => {
-          const iconSvg = iconSvgs[feature.icon];
-          return (
-            <div class="cta-feature">
-              {iconSvg && (
-                <span class="cta-feature-icon">
-                  <Fragment set:html={iconSvg} />
-                </span>
-              )}
-              <span class="cta-feature-text">{feature.text}</span>
-            </div>
-          );
-        })}
+      <!-- Right: features + button -->
+      <div class="cta-right">
+        <div class="cta-features" data-animate-stagger>
+          {features.map((feature) => {
+            const iconSvg = iconSvgs[feature.icon];
+            return (
+              <div class="cta-feature">
+                {iconSvg && (
+                  <span class="cta-feature-icon">
+                    <Fragment set:html={iconSvg} />
+                  </span>
+                )}
+                <span class="cta-feature-text">{feature.text}</span>
+              </div>
+            );
+          })}
+        </div>
+        <a href={buttonHref} class="cta-btn">
+          {buttonText}
+        </a>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
     background: var(--brand-primary);
     border-top: none;
     border-bottom: none;
-    padding: 1.5rem 0;
+    padding: 1.5625rem 0;
   }
 
   .cta-inner {
@@ -91,7 +91,14 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
-    gap: 2rem;
+  }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-left: auto;
   }
 
   .cta-phone-section {
@@ -127,22 +134,22 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
     white-space: nowrap;
   }
   .cta-phone-label {
-    font-size: 1.875rem;
+    font-size: 2.1875rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.5);
+    color: #fff;
   }
   .cta-phone-number {
-    font-size: 2.5rem;
+    font-size: 2.8125rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-highlight);
     text-decoration: none;
     letter-spacing: 0.02em;
     transition: color 0.2s ease;
   }
   .cta-phone-number:hover {
-    color: var(--brand-highlight);
+    color: #fff;
   }
 
   .cta-features {
@@ -150,7 +157,6 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    margin-left: auto;
   }
 
   .cta-feature {
@@ -166,7 +172,7 @@ const borderStyle = borderColor ? `border-top-color: ${borderColor}; border-bott
   }
 
   .cta-feature-text {
-    font-size: 1.5625rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
