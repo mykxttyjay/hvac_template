@@ -62,10 +62,10 @@
         "variant": "services",
         "title": "Related Services",
         "items": [
-          { "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "icon": "wrench", "title": "Air Conditioning Services", "href": "/air-conditioning" },
+          { "image": "https://images.unsplash.com/photo-1722010811002-a772b2066890?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "icon": "wrench", "title": "Air Conditioning Services", "href": "/air-conditioning" },
           { "image": "https://plus.unsplash.com/premium_photo-1661963270682-4b4857b6cda2?q=80&w=1470&auto=format&fit=crop", "icon": "building", "title": "Heating Services", "href": "/heating" },
-          { "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "icon": "settings", "title": "Indoor Air Quality Services", "href": "/indoor-air-quality" },
-          { "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80", "icon": "wrench", "title": "Emergency HVAC Services", "href": "/emergency" }
+          { "image": "https://images.unsplash.com/photo-1762341123870-d706f257a12e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "icon": "settings", "title": "Indoor Air Quality Services", "href": "/indoor-air-quality" },
+          { "image": "https://images.unsplash.com/photo-1638790584370-d8857cfbf7d9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "icon": "wrench", "title": "Emergency HVAC Services", "href": "/emergency" }
         ]
       }
     },

@@ -85,8 +85,9 @@ function getIcon(key?: string): string {
 
 <!-- ============ SERVICES VARIANT ============ -->
 {variant === "services" && (
-  <section class="fps-svc">
-    <div class="container mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+  <section class="fps-svc" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="absolute inset-0 bg-white/50"></div>
+    <div class="container mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16 relative z-10">
 
       {/* Header */}
       <div class="fps-svc-header" data-animate="fade-up">
@@ -380,7 +381,8 @@ function getIcon(key?: string): string {
      SERVICES VARIANT
      ═══════════════════════════════════════════ */
   .fps-svc {
-    background: var(--background);
+    position: relative;
+    overflow: hidden;
   }
 
   .fps-svc-header {
@@ -416,10 +418,7 @@ function getIcon(key?: string): string {
     .fps-svc-title { font-size: 45px; }
   }
   .fps-svc-divider {
-    width: 3rem;
-    height: 3px;
-    background: var(--brand-highlight);
-    margin: 0 auto 1.25rem;
+    display: none;
   }
   .fps-svc-subtitle {
     font-size: 0.95rem;
@@ -432,16 +431,16 @@ function getIcon(key?: string): string {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 76rem;
+    max-width: 100%;
     margin: 0 auto;
   }
   @media (min-width: 1024px) {
     .fps-svc-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
     .fps-svc-grid--narrow {
       grid-template-columns: repeat(3, 1fr);
-      max-width: 64rem;
+      max-width: 100%;
     }
   }
 
@@ -456,6 +455,7 @@ function getIcon(key?: string): string {
     transition: all 0.35s ease;
     text-decoration: none;
     color: inherit;
+    border-radius: 12px;
   }
   .fps-svc-card:hover {
     border-color: var(--brand-highlight);
@@ -527,14 +527,15 @@ function getIcon(key?: string): string {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
   .fps-svc-card-title {
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--brand-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     line-height: 1.25;
     transition: color 0.3s ease;
   }
@@ -542,8 +543,7 @@ function getIcon(key?: string): string {
     font-size: 0.85rem;
     line-height: 1.6;
     color: var(--brand-secondary);
-    margin-bottom: auto;
-    padding-bottom: 1.25rem;
+    flex: 1;
   }
 
   /* Arrow */
@@ -556,6 +556,8 @@ function getIcon(key?: string): string {
     background: var(--brand-tertiary);
     color: var(--brand-secondary);
     transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    align-self: flex-start;
   }
   .fps-svc-card:hover .fps-svc-arrow {
     background: var(--brand-highlight);
