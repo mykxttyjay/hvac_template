@@ -16,9 +16,10 @@ interface Props {
   title: string;
   description: string;
   categories: ServiceCategory[];
+  minHeight?: string;
 }
 
-const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
+const { badge = "OUR SERVICES", title, description, categories, minHeight = "min-h-[800px] sm:min-h-[600px] lg:min-h-[400px]" } = Astro.props;
 ---
 
 <section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: scroll;">
@@ -64,7 +65,7 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     </div>
 
     <!-- Service Cards Grid -->
-    <div class="relative min-h-[800px] sm:min-h-[600px] lg:min-h-[400px]">
+    <div class={`relative ${minHeight}`}>
       {categories.map((category, catIndex) => (
         <div
           class="service-content absolute inset-0 transition-all duration-500 transform"
