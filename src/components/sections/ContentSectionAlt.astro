@@ -54,9 +54,9 @@ const isRight = imagePosition === "right";
     <!-- Centered header section -->
     <div class="csa-header" data-animate="fade-up">
       {badge && (
-        <div class="csa-badge-wrap">
-          <div class="csa-badge-line"></div>
-          <span class="csa-badge">{badge}</span>
+        <div class="csa-eyebrow mb-5">
+          <svg class="csa-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span class="csa-eyebrow-text">{badge}</span>
         </div>
       )}
 
@@ -149,6 +149,36 @@ const isRight = imagePosition === "right";
     color: var(--brand-highlight);
   }
 
+  /* Eyebrow */
+  .csa-eyebrow {
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .csa-fan-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .csa-eyebrow-text {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--brand-highlight);
+    display: inline-block;
+    padding: 0;
+    background: none;
+  }
+
   /* Title */
   .csa-title {
     font-family: 'Inter', system-ui, sans-serif;
@@ -171,7 +201,7 @@ const isRight = imagePosition === "right";
     line-height: 1.8;
     color: var(--brand-secondary);
     margin-bottom: 2rem;
-    max-width: 700px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
   }
