@@ -314,7 +314,7 @@ const isRemoteImage2 = bgSrc2 && (bgSrc2.startsWith('http://') || bgSrc2.startsW
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.75rem;
+    padding: 1rem 2rem;
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 800;
     font-size: 14px;
@@ -322,6 +322,7 @@ const isRemoteImage2 = bgSrc2 && (bgSrc2.startsWith('http://') || bgSrc2.startsW
     letter-spacing: 0.1em;
     text-decoration: none;
     transition: all 0.3s ease;
+    border-radius: 0;
   }
 
   .hp-btn-highlight {
@@ -335,13 +336,19 @@ const isRemoteImage2 = bgSrc2 && (bgSrc2.startsWith('http://') || bgSrc2.startsW
   }
 
   .hp-btn-outline {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    font-weight: 900;
   }
   .hp-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.25);
     border-color: var(--brand-highlight);
     color: var(--brand-highlight);
+    box-shadow: 0 6px 24px rgba(244, 145, 29, 0.3);
+    transform: translateY(-2px);
   }
 
   /* ─── Responsive ─── */
