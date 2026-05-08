@@ -9,8 +9,7 @@
         "subtitle": "Your Feedback Matters! Share Your Experience with Our HVAC Services",
         "buttonText": "SCHEDULE SERVICE",
         "buttonHref": "/contact",
-        "backgroundImage": "/images/bg2.jpg",
-        "image": "https://images.pexels.com/photos/34069/pexels-photo.jpg",
+        "backgroundImage": "/images/hvac-man.png",
         "imageAlt": "HVAC service background"
       }
     },
