@@ -585,12 +585,17 @@ const isSlider = variant === "slider";
 <script is:inline>
   var HERO_INTERVAL = 5000;
   var heroTimer;
+  var heroAbortController;
 
   function initHeroSlider() {
     if (heroTimer) {
       clearInterval(heroTimer);
       heroTimer = undefined;
     }
+    if (heroAbortController) {
+      heroAbortController.abort();
+    }
+    heroAbortController = new AbortController();
 
     var slides = document.querySelectorAll('.hero-slide');
     var dots = document.querySelectorAll('.hero-dot');
@@ -601,20 +606,25 @@ const isSlider = variant === "slider";
     var current = 0;
 
     function goTo(index) {
-      slides[current].classList.remove('active');
-      slides[current].style.position = 'absolute';
-      slides[current].style.width = '100%';
-      dots[current].classList.remove('active');
-      if (bgs[current]) bgs[current].classList.replace('opacity-100', 'opacity-0');
+      // Batch DOM writes to avoid forced reflows
+      var oldSlide = slides[current];
+      var newSlide = slides[index];
+      var oldDot = dots[current];
+      var newDot = dots[index];
+      var oldBg = bgs[current];
+      var newBg = bgs[index];
+
+      // Remove active from old elements
+      oldSlide.classList.remove('active');
+      oldDot.classList.remove('active');
+      if (oldBg) oldBg.classList.replace('opacity-100', 'opacity-0');
+
+      // Add active to new elements
+      newSlide.classList.add('active');
+      newDot.classList.add('active');
+      if (newBg) newBg.classList.replace('opacity-0', 'opacity-100');
 
       current = index;
-
-      slides[current].classList.add('active');
-      slides[current].style.position = '';
-      slides[current].style.width = '';
-      dots[current].classList.add('active');
-      if (bgs[current]) bgs[current].classList.replace('opacity-0', 'opacity-100');
-
       startProgress();
     }
 
@@ -633,10 +643,16 @@ const isSlider = variant === "slider";
       heroTimer = setInterval(function() { goTo((current + 1) % slides.length); }, HERO_INTERVAL);
     }
 
-    dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+    dots.forEach(function(dot, i) { 
+      dot.addEventListener('click', function() { goTo(i); }, { signal: heroAbortController.signal });
+    });
     startProgress();
   }
 
   initHeroSlider();
   document.addEventListener('astro:page-load', initHeroSlider);
+  document.addEventListener('astro:before-swap', function() {
+    if (heroTimer) clearInterval(heroTimer);
+    if (heroAbortController) heroAbortController.abort();
+  }, { once: true });
 </script>

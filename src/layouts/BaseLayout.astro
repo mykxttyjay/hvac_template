@@ -89,8 +89,8 @@ const canonical = new URL(Astro.url.pathname, siteConfig.seo.siteUrl).href
     <link rel="dns-prefetch" href="https://images.pexels.com" />
     <link rel="dns-prefetch" href="https://ucarecdn.com" />
     
-    <!-- Poppins font — preload critical weights, defer the rest -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" />
+    <!-- Poppins font — load critical weights inline, defer others -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLBT5Z11lFd2JQEl8qw.woff2" type="font/woff2" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>

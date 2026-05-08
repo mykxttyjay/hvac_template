@@ -172,6 +172,7 @@ const reviews = rawReviews.map(r => ({ ...r, content: getLocationText(r.content)
     color: var(--brand-highlight);
     animation: spin 3s linear infinite;
     flex-shrink: 0;
+    will-change: transform;
   }
   @keyframes spin {
     from { transform: rotate(0deg); }
@@ -221,9 +222,15 @@ const reviews = rawReviews.map(r => ({ ...r, content: getLocationText(r.content)
     gap: 1.25rem;
     animation: scroll-left 60s linear infinite;
     padding: 1rem 0;
+    will-change: transform;
   }
 
   .rv-marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Pause animation when marquee is not visible */
+  .rv-marquee.paused .rv-marquee-track {
     animation-play-state: paused;
   }
 
@@ -311,6 +318,7 @@ const reviews = rawReviews.map(r => ({ ...r, content: getLocationText(r.content)
     border: 1px solid rgba(0,0,0,0.06);
     color: var(--brand-primary);
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
   .rv-quote svg {
     width: 28px;
@@ -326,6 +334,7 @@ const reviews = rawReviews.map(r => ({ ...r, content: getLocationText(r.content)
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .rv-stars {
@@ -399,9 +408,41 @@ const reviews = rawReviews.map(r => ({ ...r, content: getLocationText(r.content)
       padding: 3rem 0 4rem;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv-marquee-track {
+      animation: none;
+    }
+    .rv-fan-icon {
+      animation: none;
+    }
+  }
 </style>
 
 <script>
-  // Marquee animation is handled by CSS
-  // No JavaScript needed for infinite scroll
+  // Pause marquee animation when not visible to save CPU
+  function initMarqueeObserver() {
+    const marquee = document.querySelector('.rv-marquee');
+    if (!marquee) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          marquee.classList.remove('paused');
+        } else {
+          marquee.classList.add('paused');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(marquee);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMarqueeObserver);
+  } else {
+    initMarqueeObserver();
+  }
+
+  document.addEventListener('astro:page-load', initMarqueeObserver);
 </script>

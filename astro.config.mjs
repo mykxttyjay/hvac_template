@@ -61,7 +61,7 @@ export default defineConfig({
   compressHTML: true,
   
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'auto',
   },
 
   image: {
@@ -77,10 +77,14 @@ export default defineConfig({
       'healthinnovation-kss.com',
     ],
     remotePatterns: [{ protocol: 'https' }],
+    // Optimize images for mobile
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    }
   },
 
   prefetch: {
-    prefetchAll: true,
-    defaultStrategy: 'viewport',
+    prefetchAll: false,
+    defaultStrategy: 'tap',
   }
 });

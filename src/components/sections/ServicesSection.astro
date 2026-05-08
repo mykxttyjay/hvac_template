@@ -67,9 +67,8 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     <div class="relative min-h-[800px] sm:min-h-[600px] lg:min-h-[400px]">
       {categories.map((category, catIndex) => (
         <div
-          class="service-content absolute inset-0 transition-all duration-500 transform"
+          class={`service-content absolute inset-0 transition-all duration-500 transform ${catIndex === 0 ? 'active' : 'inactive'}`}
           data-content={catIndex}
-          style={catIndex === 0 ? "opacity: 1; pointer-events: auto; transform: translateY(0);" : "opacity: 0; pointer-events: none; transform: translateY(20px);"}
         >
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-animate-stagger>
             {category.services.map((service, serviceIndex) => {
@@ -124,6 +123,25 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
     to { transform: rotate(360deg); }
   }
 
+  /* Service content states */
+  .service-content {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+  }
+
+  .service-content.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .service-content.inactive {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+  }
+
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .svc-tab {
@@ -144,19 +162,19 @@ const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
       tab.addEventListener('click', () => {
         const tabIndex = tab.getAttribute('data-tab');
 
+        // Batch DOM updates to avoid reflows
         tabs.forEach((t) => t.setAttribute('data-active', 'false'));
         tab.setAttribute('data-active', 'true');
 
+        // Use CSS classes instead of inline styles to avoid reflows
         contents.forEach((content) => {
           const contentIndex = content.getAttribute('data-content');
           if (contentIndex === tabIndex) {
-            content.style.opacity = '1';
-            content.style.pointerEvents = 'auto';
-            content.style.transform = 'translateY(0)';
+            content.classList.add('active');
+            content.classList.remove('inactive');
           } else {
-            content.style.opacity = '0';
-            content.style.pointerEvents = 'none';
-            content.style.transform = 'translateY(20px)';
+            content.classList.remove('active');
+            content.classList.add('inactive');
           }
         });
       });
