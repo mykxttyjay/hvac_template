@@ -184,7 +184,8 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
     transition: all 0.3s ease;
   }
   .cc-btn:hover {
-    filter: brightness(1.08);
+    background: white;
+    color: var(--brand-primary);
     transform: translateX(4px);
   }
   .cc-btn svg {
@@ -198,6 +199,7 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
   .cc-image-wrap {
     position: relative;
     overflow: hidden;
+    border-radius: 16px;
   }
   .cc-image {
     width: 100%;
@@ -205,6 +207,7 @@ const description = rawDescription ? getLocationText(rawDescription) : undefined
     object-fit: cover;
     aspect-ratio: 4 / 3;
     transition: transform 0.6s ease;
+    border-radius: 16px;
   }
   .cc-image-wrap:hover .cc-image {
     transform: scale(1.04);

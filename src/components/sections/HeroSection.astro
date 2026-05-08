@@ -53,6 +53,9 @@ const slides = [
     statLabel: "Service Call",
     statDescription: "Expert Repairs & Installation included with every visit.",
     bgImage: heroImages[0 % heroImages.length],
+    couponValue: "$99",
+    couponLabel: "Service Call",
+    couponSideLabel: "SAVE",
   },
   {
     title: "Flexible Financing Available",
@@ -62,6 +65,9 @@ const slides = [
     statLabel: "Interest",
     statDescription: "With approved financing. Ask us about our flexible plans.",
     bgImage: heroImages[1 % heroImages.length],
+    couponValue: "0%",
+    couponLabel: "Interest",
+    couponSideLabel: "DEAL",
   },
   {
     title: "Limited Time Offer — Don't Miss Out!",
@@ -71,6 +77,9 @@ const slides = [
     statLabel: "Warranty",
     statDescription: "Warranty on furnace repair. Expert maintenance for peak efficiency.",
     bgImage: heroImages[2 % heroImages.length],
+    couponValue: "$95",
+    couponLabel: "Tune-Up",
+    couponSideLabel: "PROMO",
   },
 ];
 
@@ -137,17 +146,23 @@ const isSlider = variant === "slider";
             class={`hero-slide ${i === 0 ? 'active' : ''}`}
             data-slide={i}
           >
-            <!-- Eyebrow with background -->
-            <div class="mb-5">
-              <span class="hero-eyebrow text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-brand-highlight inline-block px-4 py-2 bg-brand-primary border-l-[3px] border-brand-highlight">
-                {slide.statLabel} — {slide.statNumber}
-              </span>
+            <!-- Title with coupon -->
+            <div class="hero-title-wrapper">
+              <h1 class="hero-title text-[2.2rem] md:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.05] mb-5 uppercase tracking-tight">
+                {getLocationText(slide.title)}
+              </h1>
+              
+              <!-- Simple coupon card -->
+              <div class="hero-coupon-card">
+                <div class="coupon-content">
+                  <div class="coupon-value">{slide.couponValue}</div>
+                  <div class="coupon-label-text">{slide.couponLabel}</div>
+                </div>
+                <div class="coupon-side">
+                  <span class="coupon-label">{slide.couponSideLabel}</span>
+                </div>
+              </div>
             </div>
-
-            <!-- Title -->
-            <h1 class="hero-title text-[2.2rem] md:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.05] mb-5 uppercase tracking-tight">
-              {getLocationText(slide.title)}
-            </h1>
 
             <!-- Subtitle (small, muted, below title) -->
             <p class="hero-subtitle text-xs md:text-sm leading-relaxed max-w-sm">
@@ -305,6 +320,147 @@ const isSlider = variant === "slider";
   .hero-cta:hover {
     filter: brightness(1.08);
     transform: translateX(4px);
+  }
+
+  /* Coupon ticket */
+  .hero-title-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-coupon-card {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background: white;
+    border: 2px dashed var(--brand-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 32px rgba(30, 58, 95, 0.25), 0 0 0 1px rgba(30, 58, 95, 0.1);
+    animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    max-width: 300px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hero-coupon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(30, 58, 95, 0.3), 0 0 0 1px rgba(30, 58, 95, 0.15);
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Main content area */
+  .coupon-content {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    padding: 1.5rem 2.0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .coupon-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-highlight) 0%, var(--brand-primary) 50%, var(--brand-highlight) 100%);
+    opacity: 0.6;
+  }
+
+  .coupon-value {
+    font-weight: 900;
+    font-size: 3.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #1a2f4a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    font-family: 'Arial Black', sans-serif;
+  }
+
+  .coupon-label-text {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+    opacity: 0.75;
+  }
+
+  /* Side coupon label */
+  .coupon-side {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #1a2f4a 100%);
+    color: white;
+    padding: 1.75rem 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 75px;
+    position: relative;
+    z-index: 1;
+    box-shadow: inset -2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .coupon-label {
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .hero-coupon-card {
+      max-width: 100%;
+      margin-top: 1rem;
+    }
+
+    .coupon-content {
+      padding: 1.5rem 1.75rem;
+    }
+
+    .coupon-value {
+      font-size: 2.8rem;
+    }
+
+    .coupon-label-text {
+      font-size: 0.75rem;
+    }
+
+    .coupon-side {
+      padding: 1.5rem 0.65rem;
+      min-width: 65px;
+    }
+
+    .coupon-label {
+      font-size: 0.8rem;
+    }
   }
 
   /* Slides */
