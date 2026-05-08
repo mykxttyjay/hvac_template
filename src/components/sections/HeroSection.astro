@@ -268,7 +268,7 @@ const isSlider = variant === "slider";
       )}
 
       {trustIndicators && trustIndicators.length > 0 && (
-        <div class="flex flex-wrap gap-4 mt-6">
+        <div class={`trust-indicators-container mt-6 ${trustIndicators.length === 4 ? 'grid-layout' : 'flex-layout'}`}>
           {trustIndicators.map((indicator) => (
             <span class="inline-flex items-center gap-2 text-sm text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-highlight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -578,6 +578,26 @@ const isSlider = variant === "slider";
     .hero-slide {
       transition: opacity 0.3s ease;
       transform: none !important;
+    }
+  }
+
+  /* Trust indicators layout */
+  .trust-indicators-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .trust-indicators-container.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .trust-indicators-container.grid-layout {
+      grid-template-columns: 1fr;
     }
   }
 </style>
