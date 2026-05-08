@@ -1,23 +1,24 @@
 ---
-interface Service {
+interface ServiceCard {
   title: string;
   description: string;
+  icon: string;
   href?: string;
 }
 
 interface ServiceCategory {
   title: string;
-  services: Service[];
+  services: ServiceCard[];
 }
 
 interface Props {
+  badge?: string;
   title: string;
   description: string;
   categories: ServiceCategory[];
-  badge?: string;
 }
 
-const { title, description, categories, badge = "Our Services" } = Astro.props;
+const { badge = "OUR SERVICES", title, description, categories } = Astro.props;
 ---
 
 <section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: scroll;">
@@ -34,8 +35,8 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     <!-- Header -->
     <div class="mb-8 max-w-6xl mx-auto text-center" data-animate="fade-up">
       <div class="mb-6 flex items-center justify-center gap-3">
-        <svg class="ss-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-highlight">{badge}</span>
+        <svg class="svc-fan-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <span class="font-bold uppercase tracking-[0.2em] text-brand-highlight" style="font-size: 14px;">{badge}</span>
       </div>
 
       <div class="grid grid-cols-1 gap-4 items-center text-center">
@@ -47,10 +48,10 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     </div>
 
     <!-- Category Tabs -->
-    <div class="flex flex-wrap gap-2 sm:gap-4 mb-12 justify-center ss-tabs" data-animate="fade-up" data-animate-delay="100">
+    <div class="flex flex-wrap gap-2 sm:gap-4 mb-12 justify-center svc-tabs" data-animate="fade-up" data-animate-delay="100">
       {categories.map((category, index) => (
         <button
-          class="ss-tab group relative px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 overflow-hidden bg-white border-2 border-gray-300 rounded-lg hover:shadow-md hover:border-brand-primary"
+          class="svc-tab group relative px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 overflow-hidden bg-white border-2 border-gray-300 rounded-lg hover:shadow-md hover:border-brand-primary"
           data-tab={index}
           data-active={index === 0 ? "true" : "false"}
         >
@@ -80,6 +81,10 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
                   style={`transition-delay: ${serviceIndex * 70}ms`}
                 >
                   <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex items-start justify-start text-brand-primary mb-6">
+                      <span class="[&>svg]:w-10 [&>svg]:h-10" set:html={service.icon} />
+                    </div>
+
                     <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-brand-primary transition-colors">
                       {service.title}
                     </h3>
@@ -106,10 +111,34 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
   </div>
 </section>
 
+<style>
+  .svc-fan-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--brand-highlight);
+    animation: spin 3s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .svc-tab {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>
+
 <script>
   function initTabs() {
-    const tabs = document.querySelectorAll<HTMLElement>('.ss-tab');
+    const tabs = document.querySelectorAll<HTMLElement>('.svc-tab');
     const contents = document.querySelectorAll<HTMLElement>('.service-content');
+
+    if (tabs.length === 0 || contents.length === 0) return;
 
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
@@ -135,30 +164,12 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
   }
 
   // Initialize on page load
-  initTabs();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTabs);
+  } else {
+    initTabs();
+  }
 
   // Re-initialize on Astro page transitions
   document.addEventListener('astro:page-load', initTabs);
 </script>
-
-<style>
-  .ss-fan-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--brand-highlight);
-    animation: spin 3s linear infinite;
-    flex-shrink: 0;
-  }
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .ss-tab {
-      font-size: 0.75rem;
-      padding: 0.5rem 1rem;
-    }
-  }
-</style>
