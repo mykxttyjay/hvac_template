@@ -20,7 +20,15 @@ interface Props {
 const { title, description, categories, badge = "Our Services" } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: fixed;">
+<section class="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden pt-12 md:pt-16 pb-4 md:pb-6" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: scroll;">
+  <style>
+    @media (min-width: 768px) {
+      section {
+        background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?q=70&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
+        background-attachment: fixed;
+      }
+    }
+  </style>
   <div class="absolute inset-0 bg-white/50"></div>
   <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
     <!-- Header -->

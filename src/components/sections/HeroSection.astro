@@ -101,10 +101,10 @@ const isSlider = variant === "slider";
           decoding={i === 0 ? "sync" : "async"}
           width={1920}
           height={1080}
-          widths={[640, 768, 1024, 1280, 1536, 1920]}
-          sizes="100vw"
+          widths={[640, 768, 1024, 1280, 1920]}
+          sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
           format="webp"
-          quality={80}
+          quality={60}
         />
       ) : (
         <img
@@ -202,10 +202,10 @@ const isSlider = variant === "slider";
         fetchpriority="high"
         width={1920}
         height={1080}
-        widths={[640, 768, 1024, 1280, 1536, 1920]}
-        sizes="100vw"
+        widths={[640, 768, 1024, 1280, 1920]}
+        sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
         format="webp"
-        quality={80}
+        quality={60}
       />
     ) : subpageImage ? (
       <img
@@ -220,10 +220,10 @@ const isSlider = variant === "slider";
       <Image
         src={bg2Img}
         alt="HVAC background"
-        widths={[640, 768, 1024, 1280, 1536, 1920]}
-        sizes="100vw"
+        widths={[640, 768, 1024, 1280, 1920]}
+        sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
         format="webp"
-        quality={80}
+        quality={60}
         class="absolute inset-0 w-full h-full object-cover"
         loading="eager"
         fetchpriority="high"
