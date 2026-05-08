@@ -38,8 +38,17 @@ function getIcon(key?: string): string {
 
 <!-- ============ FEATURES VARIANT ============ -->
 {variant === "features" && (
-  <section class="fps-feat">
-    <div class="container mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+  <section class="fps-feat" style="background-image: url('https://images.unsplash.com/photo-1615799998603-7c6270a45196?q=80&w=704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <style>
+      @media (min-width: 768px) {
+        .fps-feat {
+          background-image: url('https://images.unsplash.com/photo-1615799998603-7c6270a45196?q=80&w=704&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
+          background-attachment: fixed;
+        }
+      }
+    </style>
+    <div class="absolute inset-0 bg-white/75"></div>
+    <div class="container mx-auto px-6 md:px-12 lg:px-16 pt-12 md:pt-16 pb-4 md:pb-6 relative z-10">
 
       {/* Header */}
       <div class="fps-feat-header" data-animate="fade-up">
@@ -210,14 +219,18 @@ function getIcon(key?: string): string {
      ═══════════════════════════════════════════ */
   .fps-feat {
     background: var(--brand-tertiary);
+    position: relative;
+    overflow: hidden;
   }
 
   .fps-feat-header {
     text-align: center;
     margin-bottom: 3.5rem;
-    max-width: 48rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 10;
   }
   .fps-feat-eyebrow {
     margin-bottom: 1.25rem;
@@ -249,6 +262,7 @@ function getIcon(key?: string): string {
     height: 3px;
     background: var(--brand-highlight);
     margin: 0 auto 1.25rem;
+    display: none;
   }
   .fps-feat-subtitle {
     font-size: 0.95rem;
@@ -263,6 +277,9 @@ function getIcon(key?: string): string {
     gap: 1.5rem;
     max-width: 64rem;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 2rem;
   }
 
   .fps-feat-card {
@@ -315,11 +332,15 @@ function getIcon(key?: string): string {
     overflow: hidden;
     width: 100%;
     transition: all 0.35s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
   }
   .fps-feat-body:hover {
     border-color: var(--brand-highlight);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(244, 145, 29, 0.15);
   }
 
   .fps-feat-accent {
@@ -327,8 +348,8 @@ function getIcon(key?: string): string {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--brand-highlight);
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-highlight), transparent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s ease;
@@ -338,41 +359,48 @@ function getIcon(key?: string): string {
   }
 
   .fps-feat-inner {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .fps-feat-icon {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--brand-tertiary);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #f5f1e8;
+    border: 2px solid rgba(244, 145, 29, 0.1);
     color: var(--brand-primary);
-    margin: 0 auto 1.25rem;
+    margin: 0 auto 1.5rem;
     transition: all 0.3s ease;
+    border-radius: 8px;
   }
   .fps-feat-card:hover .fps-feat-icon {
     background: var(--brand-highlight);
     border-color: var(--brand-highlight);
-    color: var(--brand-primary);
+    color: white;
+    transform: scale(1.1);
   }
 
   .fps-feat-card-title {
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     color: var(--brand-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     transition: color 0.3s ease;
   }
   .fps-feat-card-text {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--brand-secondary);
+    font-weight: 500;
+    flex-grow: 1;
   }
 
   @media (max-width: 768px) {
