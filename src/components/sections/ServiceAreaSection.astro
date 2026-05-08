@@ -429,16 +429,64 @@ const embedUrl = mapEmbed || (mapAddress ? getMapEmbedUrl(mapAddress) : null);
   @media (max-width: 768px) {
     .sa-full-layout {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
     .sa-content-side {
-      padding: 2.5rem 1.5rem;
+      padding: 0;
     }
     .sa-content-inner {
       margin-left: 0;
     }
+    .sa-title {
+      font-size: 1.75rem;
+    }
+    .sa-desc {
+      font-size: 1rem;
+    }
     .sa-map-frame {
       min-height: 300px;
       aspect-ratio: 16 / 10;
+      border-radius: 8px;
+    }
+    .sa-areas-grid {
+      grid-template-columns: 1fr;
+    }
+    .sa-areas-summary {
+      padding: 0.875rem 1rem;
+    }
+    .sa-summary-title {
+      font-size: 0.75rem;
+    }
+    .sa-areas-count {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.5rem;
+    }
+    .sa-area-item {
+      font-size: 0.8rem;
+    }
+    
+    /* Compact variant mobile */
+    .sa-compact-wrap .sa-title {
+      font-size: 1.5rem;
+    }
+    .sa-compact-wrap .sa-desc {
+      font-size: 0.9rem;
+    }
+    .sa-compact-wrap .max-w-\[75\%\] {
+      max-width: 100%;
+    }
+    .sa-map-side {
+      min-height: 250px !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .sa-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.8rem;
     }
   }
 </style>

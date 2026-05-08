@@ -310,4 +310,18 @@ const { title, description, includedItems, benefits, buttonText = "VIEW PLANS", 
   .mp-btn:hover svg {
     transform: translateX(4px);
   }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .mp-title {
+      font-size: 1.75rem;
+    }
+    .mp-desc {
+      font-size: 1rem;
+    }
+    .mp-card-inner {
+      min-height: auto;
+      padding: 1.25rem;
+    }
+  }
 </style>

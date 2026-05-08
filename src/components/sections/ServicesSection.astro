@@ -145,4 +145,12 @@ const { title, description, categories, badge = "Our Services" } = Astro.props;
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .ss-tab {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  }
 </style>
