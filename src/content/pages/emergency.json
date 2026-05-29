@@ -34,7 +34,7 @@
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
          "images": [
-          "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp"
+          "https://www.superiorcomforthvac.com/wp-content/uploads/2024/05/ac-repair-brownstown-mi.jpg"
         ],
         "imageHeight": "790px",
         "imagePosition": "left"
@@ -47,7 +47,7 @@
         "title": "Why Choose Our Emergency HVAC",
         "titleHighlight": "Services?",
         "description": "When facing an HVAC emergency, you need a team you can trust 24/7. Our certified technicians are dispatched quickly to diagnose and resolve your heating or cooling emergency, so you can get back to comfort fast.",
-        "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/24_7-Emergency-Repair-Services.webp",
+        "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg",
         "imageAlt": "Emergency HVAC technician",
         "imagePosition": "left",
         "features": [
@@ -64,9 +64,9 @@
         "title": "Comprehensive Emergency HVAC Services",
         "variant": "services",
         "items": [
-          { "title": "24/7 AC Repairs", "href": "/emergency/24-7-ac-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Heating-and-Cooling-Emergency-Repair-Services.webp" },
-          { "title": "24/7 Heating and Cooling Repairs", "href": "/emergency/24-7-heating-cooling-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Reliable-Emergency-Services.webp" },
-          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/11/24_7-Emergency-Repair-Services.webp" }
+          { "title": "24/7 AC Repairs", "href": "/emergency/24-7-ac-repairs", "image": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg" },
+          { "title": "24/7 Heating and Cooling Repairs", "href": "/emergency/24-7-heating-cooling-repairs", "image": "https://plus.unsplash.com/premium_photo-1664298589198-b15ff5382648?q=80&w=1470&auto=format&fit=crop" },
+          { "title": "24/7 Emergency Repairs", "href": "/emergency/24-7-emergency-repairs", "image": "https://www.superiorcomforthvac.com/wp-content/uploads/2024/05/ac-repair-brownstown-mi.jpg" }
         ]
       }
     },

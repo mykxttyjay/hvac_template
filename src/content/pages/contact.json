@@ -9,7 +9,7 @@
         "subtitle": "Get in touch for fast, reliable HVAC solutions in Your City/Service Area. We're here to help with all your heating and cooling needs, big or small.",
         "buttonText": "SCHEDULE SERVICE",
         "buttonHref": "#contact-form",
-        "backgroundImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80"
+        "backgroundImage": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg"
       }
     },
     {
@@ -17,7 +17,7 @@
       "props": {
         "title": "Get in Touch with {business}",
         "description": "Fill out the form, and a member of our team will get back to you promptly. Whether you're looking for <br>a quick repair, a detailed quote, or general advice, we've got you covered.",
-        "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+        "image": "https://www.superiorcomforthvac.com/wp-content/uploads/2024/05/ac-repair-brownstown-mi.jpg",
         "serviceOptions": ["Air Conditioning", "Heating", "Indoor Air Quality", "Emergency Service", "Commercial HVAC", "Maintenance", "Other"],
         "planOptions": ["Yes", "No", "Not Sure"]
       }

@@ -35,7 +35,7 @@
         "buttonText": "Contact Us",
         "buttonHref": "/contact",
           "images": [
-          "https://johnh967.sg-host.com/wp-content/uploads/2024/11/Quality-HVAC-Service.webp"
+          "https://www.superiorcomforthvac.com/wp-content/uploads/2024/05/ac-repair-brownstown-mi.jpg"
         ],
         "imagePosition": "left",
         "imageHeight": "870px"
@@ -47,7 +47,7 @@
         "title": "Why Choose Us for Air Conditioning Services in",
         "titleHighlight": "{city}?",
         "description": "We deliver dependable, energy-efficient cooling solutions backed by years of experience and a commitment to customer satisfaction.",
-         "image": "https://johnh967.sg-host.com/wp-content/uploads/sb-instagram-feed-images/466556611_1575760946412367_152571973762791733_nfull.webp",
+         "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg",
         "imageAlt": "Air conditioning units",
         "imagePosition": "left",
         "features": [
@@ -64,8 +64,8 @@
         "variant": "services",
         "items": [
           { "title": "AC Repair", "href": "/air-conditioning/ac-repair", "image": "https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg" },
-          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://johnh967.sg-host.com/wp-content/uploads/2024/12/AC-Repair-Services.webp" },
-          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://johnh967.sg-host.com/wp-content/uploads/sb-instagram-feed-images/466556611_1575760946412367_152571973762791733_nfull.webp" },
+          { "title": "AC Tune-Up / Maintenance", "href": "/air-conditioning/ac-tune-up-maintenance", "image": "https://www.classicheatandair.com/wp-content/uploads/2025/03/iStock-2058341644-1.jpg" },
+          { "title": "AC Installation and Replacement", "href": "/air-conditioning/ac-installation-replacement", "image": "https://www.superiorcomforthvac.com/wp-content/uploads/2024/05/ac-repair-brownstown-mi.jpg" },
           { "title": "Thermostats", "href": "/air-conditioning/thermostats", "image": "https://www.askmoss.com/wp-content/uploads/2025/06/thermostat-repair-moss.jpg" }
         ]
       }
